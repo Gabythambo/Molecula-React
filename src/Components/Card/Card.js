@@ -1,8 +1,8 @@
 import * as React from 'react';
-import './card.css'
+import './Components/Card/card.css'
 
 export default function Card({img, title,description,price }){
-  console.log(title)
+  
 
     return(
         
