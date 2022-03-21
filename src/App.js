@@ -1,7 +1,7 @@
 import './App.css';
 import NavBar from './Components/NavBar'
 import CartWiget from './Components/cartWidget/carWidget'
-import itemListContainer from './Components/itemListContainer/itemListContainer';
+import ItemListContainer from './Components/itemListContainer/itemListContainer';
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
       <NavBar/>
     <CartWiget/> 
     </div>    
-    <itemListContainer/>
+    <ItemListContainer/>
   </>    
   );
 }
