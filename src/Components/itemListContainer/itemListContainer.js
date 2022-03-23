@@ -7,7 +7,6 @@ const itemListContainer = ({children}) =>{
     title: "Cafe Brasil",
     description: "1/4kg • Especialidad",
     price: "45.00",
-    stock: "5"
   }
     return(
 
