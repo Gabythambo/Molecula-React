@@ -10,7 +10,11 @@ function App() {
       <NavBar/>
     <CartWiget/> 
     </div>    
-    <ItemListContainer/>
+    <ItemListContainer>
+      {/* h2 children de itemlistcontainer  */}
+      <h2>Products on line</h2> 
+
+    </ItemListContainer>
   </>    
   );
 }
