@@ -1,5 +1,6 @@
 import "./card.css"
 import  Button from '@mui/material/Button';
+import ItemCounter from "../ItemCounter/itemCounter";
 
  const Item = ({name,thumbnail,price,stock})=>{    
     
@@ -10,6 +11,7 @@ import  Button from '@mui/material/Button';
             <h2 className="card__title">{name}</h2>
             <Button className="card__detail" >Detalle del producto  </Button>
             <h3 className="card__stock">stock disponible : {stock}</h3>
+            <ItemCounter/>
         </div>
           
         </div>
