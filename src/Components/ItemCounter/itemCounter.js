@@ -17,9 +17,11 @@ export default function ItemCounter({stock,countItem, onAdd}){
     }
     return(
         <>
-        <p>Cantidad: {count}</p>
-        <Button className="card__btn" onClick={addProduct}>+ </Button>
-        <Button className="card__btn" onClick={deductProduct}>-</Button>
+        <div className='flex'>
+            <Button className="card__btn" onClick={deductProduct}>-</Button>
+            <p>Qty: {count}</p>
+            <Button className="card__btn" onClick={addProduct}>+ </Button>
+        </div>
         <Button className="card__btn" onClick={()=> {onAdd(count)}}>Agregar al Carrito</Button>
 
       </>
