@@ -4,8 +4,6 @@ import Button from '@mui/material/Button';
 export default function ItemCounter({stock,countItem, onAdd}){
     
     const [count,setCount]=useState(countItem)
-     
-    console.log('contando desde:',count)
     
     const addProduct= ()=>{
         if (count < stock)

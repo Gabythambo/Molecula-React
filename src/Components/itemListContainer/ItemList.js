@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
 import Item from '../Card/Item'
 import { data } from '../Data/data.js'
+import ItemCounter from "../ItemCounter/itemCounter";
+
 
 const ItemList = () =>{
     
@@ -20,11 +22,17 @@ try{
 } catch (err){
     console.log(err)
 }
+
 }
 
 useEffect(()=>{
     getProductsData()
 },); // si uso array vacio me da error
+
+function onAdd(cantidad){
+    console.log(`agregaste ${cantidad}`)
+  }   
+ 
 
 return(
     <div className='wrapper'>
@@ -40,6 +48,7 @@ return(
                           stock={product.stock}
                           id={product.id}
                         />
+                     <ItemCounter/>
                       </div>
                     )
 
