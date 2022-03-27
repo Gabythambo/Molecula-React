@@ -29,11 +29,6 @@ useEffect(()=>{
     getProductsData()
 },); // si uso array vacio me da error
 
-function onAdd(cantidad){
-    console.log(`agregaste ${cantidad}`)
-  }   
- 
-
 return(
     <div className='wrapper'>
         {
