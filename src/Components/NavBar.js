@@ -3,13 +3,14 @@ import Button from '@mui/material/Button';
 
 
 
+
 export default function NavBar()  {
     
         return(
         <>
            <header className='App-header'>
             <div>
-            MI LOGO
+            <h2>Molecula</h2>
             </div>
            
             <ul>
