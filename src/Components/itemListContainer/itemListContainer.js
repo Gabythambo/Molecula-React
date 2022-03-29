@@ -7,7 +7,7 @@ const itemListContent = ({children}) =>{
         <div className="ContainerProducts">
         <div>{children}</div>
     
-            <ItemList/> 
+            <ItemList /*key={'product.id'}*//> 
      
         </div>
         

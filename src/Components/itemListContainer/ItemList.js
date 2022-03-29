@@ -26,7 +26,7 @@ try{
 
 useEffect(()=>{
     getProductsData()
-    console.table(products)
+    // console.table(products)
 },); // si uso array vacio me da error
 
 
@@ -36,15 +36,16 @@ return(
         
                 products.map((product) =>{
                     return (
-                        <div key={product.id}>
+                        
                         <Item
+                        key={product.id}
                           name={product.name}
                           thumbnail={product.thumbnail}
                           price={product.price}
                           stock={product.stock}
                           id={product.id}
                         />
-                      </div>
+                      
                     )
 
                 })
