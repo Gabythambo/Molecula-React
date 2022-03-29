@@ -1,18 +1,25 @@
 import { useEffect, useState } from 'react'
 // import ItemDetail from './ItemDetail'
+import Item from '../Card/Item';
 
 const ItemDetailContainer = ({children})=>{
 
-    const url="https://run.mocky.io/v3/7c008792-4143-4754-a60f-13ff12e203f7"
+    const url="https://run.mocky.io/v3/9924e14d-0573-4155-a686-44b9fa4be7dd"
 
     const [items,setItems]=useState([]);
 
+    
+
     const getItems = async ()=>{
 
-        const response = await fetch(url);
-        const data = await response.json();
-        console.log(response)
-    
+        try{
+            const response = await fetch(url);
+            const data = await response.json();
+            setItems(data)
+        }
+        catch (error){
+            console.log(error)
+        }
     }   
     useEffect(()=>{  
         getItems(setItems);
@@ -20,23 +27,28 @@ const ItemDetailContainer = ({children})=>{
     },[])
 
 return(
-    <div className='wrapper'>
+    <>
+    <h2>Listado por api </h2>
+
+    <div className='wrapper' >
+           
         {
-                 items.map((product) =>{
+                 items.map((items) =>{
                     return (
-                        <div className="itemDetailContainer">
-                            <div key={product.id}
-                            name={product.name}
-                            thumbnail={product.thumbnail}
-                            price={product.price}
-                            stock={product.stock}
-                            id={product.id}
+                        
+                            <Item key={items.id}
+                            name={items.name}
+                            thumbnail={items.thumbnail}
+                            price={items.price}
+                            stock={items.stock}
+                            id={items.id}
                             />
-                        </div>     
+                
                     )
                 })
         }
     </div>
+    </>
 )
 }
 export default ItemDetailContainer;
