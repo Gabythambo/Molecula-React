@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Button from '@mui/material/Button';
-
+import CartWidget from './cartWidget/carWidget'
 
 
 
@@ -19,7 +19,7 @@ export default function NavBar()  {
                 <li><Button variant="contained">Subcripcion</Button></li>
                 
             </ul>
-        
+            <CartWidget/>
             </header>
         
         </>

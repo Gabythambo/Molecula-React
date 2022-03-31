@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
-// import ItemDetail from './ItemDetail'
-import Item from '../Card/Item';
+import ItemDetail from './ItemDetail';
+
+
 
 const ItemDetailContainer = ({children})=>{
 
@@ -9,12 +10,15 @@ const ItemDetailContainer = ({children})=>{
     const [items,setItems]=useState([]);
 
     
+    {/* const selected = response.findIndex( item => item.productId === requestedId);
+                setProduct(response[selected]); */}   
 
     const getItems = async ()=>{
 
         try{
             const response = await fetch(url);
             const data = await response.json();
+            
             setItems(data)
         }
         catch (error){
@@ -28,15 +32,17 @@ const ItemDetailContainer = ({children})=>{
 
 return(
     <>
-    <h2>Listado por api </h2>
+    <h2>Detalle del Producto </h2>
 
-    <div className='wrapper' >
+    <div className='' >
+
            
         {
                  items.map((items) =>{
+                     if (items.id === 2 )
                     return (
                         
-                            <Item key={items.id}
+                            <ItemDetail key={items.id}
                             name={items.name}
                             thumbnail={items.thumbnail}
                             price={items.price}

@@ -1,25 +1,38 @@
 import './App.css';
 import NavBar from './Components/NavBar'
-import CartWiget from './Components/cartWidget/carWidget'
+
+
+import ItemDetailPage from './Components/ItemDetailContainer/ItemDetailContainer'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from './Pages/Home';
 import ItemListContainer from './Components/itemListContainer/itemListContainer';
-import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailContainer'
+import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailContainer';
 
 function App() {
   return (
-  <>
-    <div className='App-header'>
-      <NavBar/>
-    <CartWiget/> 
-    </div>    
-    <ItemListContainer>
-      {/* h2 children de itemlistcontainer  */}
-      <h2>Todos los Productos</h2> 
-    </ItemListContainer>
-    <ItemDetailContainer>
-    <h2>Detalle Producto</h2> 
-    </ItemDetailContainer>
+    <>
+      {/* <BrowserRouter>
+
     
-  </>    
+    <Routes>  
+        <Route path='/' element={Home} />
+    </Routes>
+     
+      <ItemDetailPage/>
+
+  </BrowserRouter> */}
+
+      <NavBar />
+
+      <ItemListContainer>
+        <h2>Todos los Productos</h2>
+      </ItemListContainer>
+      <ItemDetailContainer></ItemDetailContainer>
+
+
+
+
+    </>
   );
 }
 
