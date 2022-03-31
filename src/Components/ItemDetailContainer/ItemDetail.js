@@ -9,9 +9,9 @@ const ItemDetail = ({name,thumbnail,price,stock,id})=>{
     return(
      
 <section id="services" className="services section-bg">
-   <div classNameName="container-fluid">
+   <div className="container-fluid">
      <div className="col-sm-12 text-center mb-4">
-       <a className="btn btn-primary" target="" href=""> COMPRAR "{name}" Ahora </a>
+       <a className="btn btn-primary"> COMPRAR "{name}" Ahora </a>
      </div>
       <div className="row row-sm">
          <div className="col-md-6 _boxzoom">

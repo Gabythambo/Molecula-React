@@ -27,7 +27,7 @@ try{
 useEffect(()=>{
     getProductsData()
     // console.table(products)
-},[]); // si uso array vacio me da error
+},); // si uso array vacio me da error
 
 
 return(

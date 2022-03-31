@@ -5,9 +5,9 @@ const itemListContent = ({children}) =>{
 
     return(
         <div className="ContainerProducts">
-        <div>{children}</div>
+        <div><h2>Todos los Productos</h2></div>
     
-            <ItemList /*key={'product.id'}*//> 
+         <ItemList /*key={'product.id'}*//> 
      
         </div>
         
