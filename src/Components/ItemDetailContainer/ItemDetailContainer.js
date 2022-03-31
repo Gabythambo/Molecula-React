@@ -3,7 +3,7 @@ import ItemDetail from './ItemDetail';
 
 
 
-const ItemDetailContainer = ({children})=>{
+const ItemDetailContainer = ({id})=>{
 
     const url="https://run.mocky.io/v3/9924e14d-0573-4155-a686-44b9fa4be7dd"
 
@@ -36,7 +36,7 @@ return(
 
     <div className='' >
 
-           
+            
         {
                  items.map((items) =>{
                      if (items.id === 2 )

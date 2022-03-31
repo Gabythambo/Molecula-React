@@ -7,20 +7,24 @@ import NavBar from './Components/NavBar'
 import ItemListContainer from './Components/itemListContainer/itemListContainer';
 import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailContainer';
 
+import Home from "./Pages/Home"
+import ItemDetailPage from "./Pages/ItemDetailPage";
 
 
 
 function App() {
   return (
     <>
+    
        <BrowserRouter>
       <NavBar />
+    
+      <Routes>
+        <Route path="/" element={<Home/>}/>
+        <Route path="/producto/:id" element={<ItemDetailPage/>}/>
+      </Routes>
 
-      <ItemListContainer>
-      </ItemListContainer>
       
-      <ItemDetailContainer> 
-      </ItemDetailContainer>
       </BrowserRouter> 
 {/*
     

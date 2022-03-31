@@ -1,12 +1,9 @@
-import ItemListContainer from "../Components/ItemDetailContainer/ItemDetailContainer"
+import ItemListContainer from "../Components/itemListContainer/itemListContainer"
 
 const home = ()=>{
 
     return(
-        <ItemListContainer>
-      
-      <h2>Todos los Productos</h2> 
-    </ItemListContainer>
+        <ItemListContainer/>
 
     )
 }
