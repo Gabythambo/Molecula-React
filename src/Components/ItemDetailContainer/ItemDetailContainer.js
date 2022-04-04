@@ -1,15 +1,18 @@
 import { useEffect, useState } from 'react'
 import ItemDetail from './ItemDetail';
+import { useParams } from 'react-router-dom';
 
+const ItemDetailContainer = ({})=>{
 
-
-const ItemDetailContainer = ({id})=>{
+    const {id}=useParams()
+    
+    
 
     const url="https://run.mocky.io/v3/9924e14d-0573-4155-a686-44b9fa4be7dd"
 
     const [items,setItems]=useState([]);
 
-    
+     
     {/* const selected = response.findIndex( item => item.productId === requestedId);
                 setProduct(response[selected]); */}   
 
@@ -24,24 +27,28 @@ const ItemDetailContainer = ({id})=>{
         catch (error){
             console.log(error)
         }
+    
     }   
+    
     useEffect(()=>{  
         getItems(setItems);
+        
+        
     
     },[])
+    
 
+    
 return(
     <>
-    <h2>Detalle del Producto </h2>
-
-    <div className='' >
-
+  
             
         {
+            
                  items.map((items) =>{
-                     if (items.id === 2 )
-                    return (
+                        if (items.id == id)
                         
+                    return (
                             <ItemDetail key={items.id}
                             name={items.name}
                             thumbnail={items.thumbnail}
@@ -53,7 +60,7 @@ return(
                     )
                 })
         }
-    </div>
+    
     </>
 )
 }

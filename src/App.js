@@ -4,9 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css'; 
 // Componentes //
 import NavBar from './Components/NavBar'
-import ItemListContainer from './Components/itemListContainer/itemListContainer';
-import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailContainer';
-
+import ContactPage from "./Pages/ContactPage";
 import Home from "./Pages/Home"
 import ItemDetailPage from "./Pages/ItemDetailPage";
 
@@ -18,22 +16,13 @@ function App() {
     
        <BrowserRouter>
       <NavBar />
-    
-      <Routes>
-        <Route path="/" element={<Home/>}/>
-        <Route path="/producto/:id" element={<ItemDetailPage/>}/>
-      </Routes>
-
-      
+        <Routes>
+          <Route path="/" element={<Home/>}/>
+          <Route path="/producto/:id" element={<ItemDetailPage/>}/>
+          <Route path="/contact" element={<ContactPage/>}/>
+        </Routes>
       </BrowserRouter> 
-{/*
-    
-    <Routes>  
-        <Route path='/' element={Home} />
-    </Routes>
-     
-      <ItemDetailPage/>
-*/}
+
 
 
 

@@ -47,7 +47,7 @@
 	position: absolute;
 	top: 40px;
 	left: 40px;
-	background: url() left top no-repeat;
+	/* background: url() left top no-repeat; */
 }
 
 .my_img {

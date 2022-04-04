@@ -1,18 +1,18 @@
 import './ItemDetail.css'
 import  Button from '@mui/material/Button';
 import ItemCounter from '../ItemCounter/itemCounter';
+import { useParams } from 'react-router-dom';
 
-const ItemDetail = ({name,thumbnail,price,stock,id})=>{    
 
+const ItemDetail = ({name,thumbnail,price,stock})=>{    
    
+ 
 
     return(
      
 <section id="services" className="services section-bg">
    <div className="container-fluid">
-     <div className="col-sm-12 text-center mb-4">
-       <a className="btn btn-primary"> COMPRAR "{name}" Ahora </a>
-     </div>
+     
       <div className="row row-sm">
          <div className="col-md-6 _boxzoom">
             
@@ -58,7 +58,7 @@ const ItemDetail = ({name,thumbnail,price,stock,id})=>{
                      <ul className="spe_ul"></ul>
                      <div className="_p-qty-and-cart">
                         <div className="_p-add-cart">
-                           <Button className="btn-theme btn buy-btn" >
+                           <Button  className="btn-theme btn buy-btn" >
                            <i className="fa fa-shopping-cart"></i>  Comprar
                            </Button>
                           
