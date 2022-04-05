@@ -12,9 +12,7 @@ const ItemDetailContainer = ({})=>{
 
     const [items,setItems]=useState([]);
 
-     
-    {/* const selected = response.findIndex( item => item.productId === requestedId);
-                setProduct(response[selected]); */}   
+       
 
     const getItems = async ()=>{
 
