@@ -34,9 +34,7 @@ const ItemDetailContainer = ({})=>{
     
     },[])
 
-    function onAdd(cantidad){
-        console.log(`agregaste ${cantidad} ${name}`)
-      }   
+      
 
     
 return(
