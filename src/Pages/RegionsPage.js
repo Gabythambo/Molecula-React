@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react'
-import ItemDetail from './ItemDetail';
+import ItemDetail from '../Components/ItemDetailContainer/ItemDetail';
 import { useParams } from 'react-router-dom';
 
-const ItemDetailContainer = ({})=>{
 
-    const {id}=useParams()
-    
-    
+
+
+const RegionPageContainer = ({})=>{
+
+    const {region}=useParams()
 
     const url="https://run.mocky.io/v3/65a134eb-d0a3-4d61-bdb9-18c3464fb492"
 
@@ -19,8 +20,9 @@ const ItemDetailContainer = ({})=>{
         try{
             const response = await fetch(url);
             const data = await response.json();
-            
+            console.log(data)
             setItems(data)
+            
         }
         catch (error){
             console.log(error)
@@ -39,12 +41,12 @@ const ItemDetailContainer = ({})=>{
     
 return(
     <>
-  
+  <div className='wrapper'>
             
         {
             
                  items.map((items) =>{
-                        if (items.id == id)
+                        if (items.region == region)
                         
                     return (
                             <ItemDetail key={items.id}
@@ -62,8 +64,8 @@ return(
                     )
                 })
         }
-    
+    </div>
     </>
 )
 }
-export default ItemDetailContainer;
+export default RegionPageContainer;

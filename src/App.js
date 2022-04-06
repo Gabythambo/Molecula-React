@@ -7,8 +7,10 @@ import NavBar from './Components/NavBar'
 import ContactPage from "./Pages/ContactPage";
 import Home from "./Pages/Home"
 import ItemDetailPage from "./Pages/ItemDetailPage";
+import context from "./Context/Context";
+import {cartContext} from "./Context/Context"
 
-
+import RegionsPage from "./Pages/RegionsPage";
 
 function App() {
   return (
@@ -18,10 +20,12 @@ function App() {
       <NavBar />
         <Routes>
           <Route path="/" element={<Home/>}/>
-          <Route path="/producto/:id" element={<ItemDetailPage/>}/>
+          <Route path="/region/:region" element={<RegionsPage/>}/>
           <Route path="/contact" element={<ContactPage/>}/>
+          <Route path="/producto/:id" element={<ItemDetailPage/>}/>
         </Routes>
       </BrowserRouter> 
+   
 
 
 

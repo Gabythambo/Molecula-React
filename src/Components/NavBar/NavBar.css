@@ -134,3 +134,10 @@
       display: none;
     }
   }
+  #composition-menu {
+    display: flex;
+    flex-direction: column;
+  }
+  #composition-button {
+    color: #000;
+  }

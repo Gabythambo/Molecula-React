@@ -2,9 +2,10 @@ import './ItemDetail.css'
 import  Button from '@mui/material/Button';
 import ItemCounter from '../ItemCounter/itemCounter';
 import { useParams } from 'react-router-dom';
+import { Description } from '@mui/icons-material';
 
 
-const ItemDetail = ({name,thumbnail,price,stock})=>{    
+const ItemDetail = ({name,thumbnail,price,stock,description,id,category,region})=>{    
    
  
 
@@ -13,37 +14,24 @@ const ItemDetail = ({name,thumbnail,price,stock})=>{
 <section id="services" className="services section-bg">
    <div className="container-fluid">
      
-      <div className="row row-sm">
-         <div className="col-md-6 _boxzoom">
+      <div className="">
+         <div className="">
             
-            <div className="_product-images">
-               <div className="picZoomer">
-                  <img className="my_img img-responsive" src={thumbnail} alt="" />
+            <div className="">
+               <div className="">
+                  <img className="" src={thumbnail} alt="" />
                </div>
             </div>
          </div>
-         <div className="col-md-6">
+         <div className="">
             <div className="_product-detail-content">
                <p className="_p-name"> {name} </p>
                <div className="_p-features">
-                     <span> Description About this product:- </span>
-                     Solid color polyester/linen full blackout thick sunscreen floor curtain
-                     Type: General Pleat
-                     Applicable Window Type: Flat Window
-                     Format: Rope
-                     Opening and Closing Method: Left and Right Biparting Open
-                     Processing Accessories Cost: Included
-                     Installation Type: Built-in
-                     Function: High Shading(70%-90%)
-                     Material: Polyester / Cotton
-                     Style: ClassNameic
-                     Pattern: Embroidered
-                     Location: Window
-                                          
+                     <p>{description}</p>        
                   </div>
                <div className="_p-price-box">
                   <div className="p-list">
-                     <span> PRECIO : <i className="fa fa-dollar"></i> <del> {price}  </del>   </span>
+                     <span> {price} : <i className="fa fa-dollar"></i> <del> {price}  </del>   </span>
                      <span className="price"> {price} </span>
                   </div>
                   <div className="_p-add-cart">
@@ -53,21 +41,6 @@ const ItemDetail = ({name,thumbnail,price,stock})=>{
                     
                      </div>
                   </div>
-                 
-                   <form action="" method="post" accept-charset="utf-8">
-                     <ul className="spe_ul"></ul>
-                     <div className="_p-qty-and-cart">
-                        <div className="_p-add-cart">
-                           <Button  className="btn-theme btn buy-btn" >
-                           <i className="fa fa-shopping-cart"></i>  Comprar
-                           </Button>
-                          
-                           <input type="hidden" name="pid" value="18" />
-                           <input type="hidden" name="price" value="850" />
-                           <input type="hidden" name="url" value="" />    
-                        </div>
-                     </div>
-                  </form> 
                </div>
             </div>
          </div>

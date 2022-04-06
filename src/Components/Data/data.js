@@ -1,4 +1,5 @@
 export const data = [
+// single origen - blend - notas taste  - roast   
     {
         "thumbnail": "https://coffee.alexflipnote.dev/random",
         "name": "Cafe Brasil",

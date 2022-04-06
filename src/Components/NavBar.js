@@ -3,6 +3,7 @@ import  Button  from '@mui/material/Button';
 import CartWidget from './cartWidget/carWidget'
 import { Link } from 'react-router-dom';
 import "./NavBar/NavBar.css"
+import MenuListComposition from './MenuListComposition/MenuListComposition';
 
 
 
@@ -21,7 +22,7 @@ export default function NavBar()  {
            
             <ul>
                 <li><Button variant="contained"><Link to={'/'}>Home</Link></Button></li>
-                <li><Button variant="contained"><Link to={'/producto/:id'}>Detalle</Link></Button></li>
+                <li><Button variant="contained" ><MenuListComposition>Regiones</MenuListComposition></Button></li>
                 <li><Button variant="contained" ><Link to={''}>Quiz</Link></Button></li>
                 <li><Button variant="contained"><Link to={'/contact'} >Contacto</Link></Button></li>
                 

@@ -4,7 +4,7 @@ import ItemCounter from "../ItemCounter/itemCounter"
 import {Link} from 'react-router-dom';
 // import ItemDetail from "../ItemDetailContainer/ItemDetail";
 
- const Item = ({name,thumbnail,price,stock,id})=>{    
+ const Item = ({name,thumbnail,price,stock,description,id,category,region})=>{    
     
     function onAdd(cantidad){
         console.log(`agregaste ${cantidad} ${name}`)
@@ -19,7 +19,7 @@ import {Link} from 'react-router-dom';
             <h3 className="card__stock">stock disponible : {stock}</h3>
             <h3 className="card__stock">Precio : {price}</h3>
         </div>
-        <ItemCounter stock={stock} countItem={1} onAdd={onAdd}/>
+        {/* <ItemCounter stock={stock} countItem={1} onAdd={onAdd}/> */}
         </div>
         )
 }
