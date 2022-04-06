@@ -21,10 +21,10 @@ export default function NavBar()  {
             </div>
            
             <ul>
-                <li><Button variant="contained"><Link to={'/'}>Home</Link></Button></li>
-                <li><Button variant="contained" ><MenuListComposition>Regiones</MenuListComposition></Button></li>
-                <li><Button variant="contained" ><Link to={''}>Quiz</Link></Button></li>
-                <li><Button variant="contained"><Link to={'/contact'} >Contacto</Link></Button></li>
+                <li><Button><Link to={'/'}>Home</Link></Button></li>
+                <li><Button><MenuListComposition>Regiones</MenuListComposition></Button></li>
+                <li><Button><Link to={''}>Quiz</Link></Button></li>
+                <li><Button><Link to={'/contact'} >Contacto</Link></Button></li>
                 
             </ul>
             <CartWidget/>

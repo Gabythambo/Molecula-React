@@ -80,7 +80,7 @@ export default function MenuListComposition() {
                     aria-labelledby="composition-button"
                     onKeyDown={handleListKeyDown}
                   >
-                   <li><Link to={'/region/South America'}>South America</Link></li>
+                  <li><Link to={'/region/South America'}>South America</Link></li>
                   <li><Link to={'/region/Central America'}>Central America</Link></li>
                   <li><Link to={'/region/China'}>China</Link></li>
                   <li><Link to={'/region/Africa'}>Africa</Link></li>

@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 
 
 
-const RegionPageContainer = ({})=>{
+const RegionPageContainer = ()=>{
 
     const {region}=useParams()
 
@@ -42,11 +42,9 @@ const RegionPageContainer = ({})=>{
 return(
     <>
   <div className='wrapper'>
-            
-        {
-            
+             {
                  items.map((items) =>{
-                        if (items.region == region)
+                        if (items.region === region)
                         
                     return (
                             <ItemDetail key={items.id}
@@ -62,6 +60,7 @@ return(
                             />
                 
                     )
+                    else{return (null)}
                 })
         }
     </div>

@@ -15,6 +15,8 @@ export default function ItemCounter({stock,countItem, onAdd}){
         setCount(count - 1)
         }
     }
+    
+
     return(
         <>
         <div className='flex'>

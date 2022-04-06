@@ -4,14 +4,13 @@ import { useParams } from 'react-router-dom';
 
 const ItemDetailContainer = ({})=>{
 
-    const {id}=useParams()
+    const {id,name}=useParams()
     
     
 
     const url="https://run.mocky.io/v3/65a134eb-d0a3-4d61-bdb9-18c3464fb492"
 
     const [items,setItems]=useState([]);
-
        
 
     const getItems = async ()=>{
@@ -34,7 +33,10 @@ const ItemDetailContainer = ({})=>{
         
     
     },[])
-    
+
+    function onAdd(cantidad){
+        console.log(`agregaste ${cantidad} ${name}`)
+      }   
 
     
 return(
@@ -56,7 +58,7 @@ return(
                             description={items.description}
                             category={items.category}
                             region={items.region}
-
+                            onAdd={onAdd}
                             />
                 
                     )

@@ -5,10 +5,10 @@ import { useParams } from 'react-router-dom';
 import { Description } from '@mui/icons-material';
 
 
-const ItemDetail = ({name,thumbnail,price,stock,description,id,category,region})=>{    
-   
- 
-
+const ItemDetail = ({name,thumbnail,price,stock,description,id,category,region,onAdd})=>{    
+   function onAdd(cantidad){
+      console.log(`agregaste ${cantidad} ${name}`)
+    }
     return(
      
 <section id="services" className="services section-bg">
@@ -37,7 +37,7 @@ const ItemDetail = ({name,thumbnail,price,stock,description,id,category,region})
                   <div className="_p-add-cart">
                      <div className="_p-qty">
                         
-                    <ItemCounter stock={stock} countItem={1} /*onAdd={onAdd}*/   />
+                    <ItemCounter stock={stock} countItem={1} onAdd={onAdd}/>
                     
                      </div>
                   </div>
