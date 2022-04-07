@@ -1,8 +1,10 @@
 
+  button {
+    color: #ffff;
+  }
   a {
     color: #000;
   }
-  
   /* header */
   
   .header {
@@ -139,5 +141,10 @@
     flex-direction: column;
   }
   #composition-button {
-    color: #000;
+    color: #fff;
+  }
+
+  .color
+  {
+    color: #fff;
   }
