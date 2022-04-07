@@ -21,10 +21,10 @@ export default function NavBar()  {
             </div>
            
             <ul>
-                <li><Button ><Link className='color' to={'/'}>Home</Link></Button></li>
-                <li><Button><MenuListComposition>Regiones</MenuListComposition></Button></li>
-                <li><Button><Link className='color' to={''}>Quiz</Link></Button></li>
-                <li><Button><Link className='color' to={'/contact'} >Contacto</Link></Button></li>
+                <Button ><Link className='color' to={'/'}>Home</Link></Button>
+                <Button><MenuListComposition>Regiones</MenuListComposition></Button>
+                <Button><Link className='color' to={''}>Quiz</Link></Button>
+                <Button><Link className='color' to={'/contact'} >Contacto</Link></Button>
                 
             </ul>
             <CartWidget/>
