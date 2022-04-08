@@ -1,22 +1,23 @@
 import './ItemDetail.css'
 import  Button from '@mui/material/Button';
 import ItemCounter from '../ItemCounter/itemCounter';
-import { useParams } from 'react-router-dom';
-import { Description } from '@mui/icons-material';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
-
-const ItemDetail = ({name,thumbnail,price,stock,description,id,category,region,onAdd})=>{    
+const ItemDetail = ({name,thumbnail,price,stock,description,id,category,region,onAdd})=>{ 
+   const [inCart,setInCart]=useState(false)   
+  
    function onAdd(cantidad){
+      setInCart(true)
+
       console.log(`agregaste ${cantidad} ${name}`)
     }
     return(
      
 <section id="services" className="services section-bg">
    <div className="container-fluid">
-     
       <div className="">
          <div className="">
-            
             <div className="">
                <div className="">
                   <img className="" src={thumbnail} alt="" />
@@ -36,9 +37,7 @@ const ItemDetail = ({name,thumbnail,price,stock,description,id,category,region,o
                   </div>
                   <div className="_p-add-cart">
                      <div className="_p-qty">
-                        
-                    <ItemCounter stock={stock} countItem={1} onAdd={onAdd}/>
-                    
+                    {inCart ? <Link to={`/cart`}><Button>Got to Cart</Button></Link> :<ItemCounter stock={stock} countItem={1} onAdd={onAdd}/>}
                      </div>
                   </div>
                </div>

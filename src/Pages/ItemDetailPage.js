@@ -4,7 +4,7 @@ const ItemDetailPage = ()=>{
 
     return(
         <ItemDetailContainer >
-      <h2>Detalle Producto</h2> 
+      
       </ItemDetailContainer>
 
     )

@@ -1,14 +1,12 @@
 import "./card.css"
 import  Button from '@mui/material/Button';
-import ItemCounter from "../ItemCounter/itemCounter"
+// import ItemCounter from "../ItemCounter/itemCounter"
 import {Link} from 'react-router-dom';
-// import ItemDetail from "../ItemDetailContainer/ItemDetail";
+
 
  const Item = ({name,thumbnail,price,stock,description,id,category,region})=>{    
     
-    function onAdd(cantidad){
-        console.log(`agregaste ${cantidad} ${name}`)
-      }   
+   
 
   return(
         <div className="card">

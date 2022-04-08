@@ -1,39 +1,40 @@
 import { useEffect, useState } from 'react'
 import Item from '../Card/Item'
 import { data } from '../Data/data.js'
-
+import { CircularProgress } from '@mui/material'
 
 const ItemList = () =>{
-    
-const [products,setProducts]=useState([])
 
-const getProducts= new Promise ((resolve,reject) =>{
+const [products,setProducts]=useState([])
+const [loading,setLoading]=useState([true])
+
+    const getProducts= new Promise ((resolve,reject) =>{
         setTimeout(()=>{
             resolve(data);
         },
         2000);
     })
-    
+      
     const getProductsData = async ()=>{
 try{
     const resultado = await getProducts;
     setProducts(resultado)
-} catch (err){
+    setLoading(false)
+    } catch (err){
     console.log(err)
 }
-
 }
 
 useEffect(()=>{
     getProductsData()
-    // console.table(products)
-},[]); // si uso array vacio me da error
+    
+},); // si uso array vacio me da error
 
 
 return(
     <div className='wrapper'>
         {
-        
+             loading ? <CircularProgress /> :
                 products.map((product) =>{
                     return (
                         
@@ -45,7 +46,7 @@ return(
                           stock={product.stock}
                           id={product.id}
                         />
-                      
+                    
                     )
 
                 })

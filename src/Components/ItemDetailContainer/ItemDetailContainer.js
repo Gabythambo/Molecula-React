@@ -4,9 +4,7 @@ import { useParams } from 'react-router-dom';
 
 const ItemDetailContainer = ({})=>{
 
-    const {id,name}=useParams()
-    
-    
+    const {id}=useParams()
 
     const url="https://run.mocky.io/v3/65a134eb-d0a3-4d61-bdb9-18c3464fb492"
 
@@ -56,7 +54,7 @@ return(
                             description={items.description}
                             category={items.category}
                             region={items.region}
-                            onAdd={onAdd}
+    
                             />
                 
                     )

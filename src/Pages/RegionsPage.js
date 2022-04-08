@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import ItemDetail from '../Components/ItemDetailContainer/ItemDetail';
+import Item from '../Components/Card/Item'
 import { useParams } from 'react-router-dom';
 
 
@@ -47,7 +47,7 @@ return(
                         if (items.region === region)
                         
                     return (
-                            <ItemDetail key={items.id}
+                            <Item key={items.id}
                             name={items.name}
                             thumbnail={items.thumbnail}
                             price={items.price}
