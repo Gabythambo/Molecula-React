@@ -1,17 +1,21 @@
 import './ItemDetail.css'
 import  Button from '@mui/material/Button';
 import ItemCounter from '../ItemCounter/itemCounter';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { CartContext } from '../Context/CartContext';
 
-const ItemDetail = ({name,thumbnail,price,stock,description,id,category,region,onAdd})=>{ 
+const ItemDetail = ({name,thumbnail,price,stock,description,id,category,region,cantidad})=>{ 
    const [inCart,setInCart]=useState(false)   
-  
+  const {addProduct} =useContext(CartContext)
+
    function onAdd(cantidad){
       setInCart(true)
+      addProduct(name,cantidad)
+   }
+      
 
-      console.log(`agregaste ${cantidad} ${name}`)
-    }
+   
     return(
      
 <section id="services" className="services section-bg">

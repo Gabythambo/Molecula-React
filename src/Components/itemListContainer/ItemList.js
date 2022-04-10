@@ -1,12 +1,17 @@
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import Item from '../Card/Item'
 import { data } from '../Data/data.js'
 import { CircularProgress } from '@mui/material'
+
+
+
 
 const ItemList = () =>{
 
 const [products,setProducts]=useState([])
 const [loading,setLoading]=useState([true])
+
+
 
     const getProducts= new Promise ((resolve,reject) =>{
         setTimeout(()=>{
@@ -29,6 +34,7 @@ useEffect(()=>{
     getProductsData()
     
 },); // si uso array vacio me da error
+
 
 
 return(

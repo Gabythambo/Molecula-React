@@ -20,7 +20,7 @@ const RegionPageContainer = ()=>{
         try{
             const response = await fetch(url);
             const data = await response.json();
-            console.log(data)
+            // console.log(data)
             setItems(data)
             
         }

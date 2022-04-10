@@ -4,16 +4,18 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css'; 
 // Componentes //
 import NavBar from './Components/NavBar'
+import CartContext  from "./Components/Context/CartContext";
 import Cart from "./Pages/Cart";
 import ContactPage from "./Pages/ContactPage";
 import Home from "./Pages/Home"
 import ItemDetailPage from "./Pages/ItemDetailPage";
 import RegionsPage from "./Pages/RegionsPage";
 
+
 function App() {
   return (
     <>
-    
+      <CartContext>
        <BrowserRouter>
       <NavBar />
         <Routes>
@@ -24,6 +26,7 @@ function App() {
           <Route path="/cart" element={<Cart/>}/>
         </Routes>
       </BrowserRouter> 
+      </CartContext>
    
 
 
