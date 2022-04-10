@@ -4,11 +4,35 @@ export const CartContext = createContext()
 
 const CartProvider = ({children}) =>{
     
-    const [cartArray,setcartArray] = useState([]);
+    const [cartArray,setCartArray] = useState([]);
       
-      const addProduct =(itemDetail,cantidad)=>{
-        console.log(`agregaste ${cantidad} ${itemDetail}`)
-      }
+        const addProduct =(name,cantidad,price,id)=>{
+             const newproduct= {
+                                name,
+                                cantidad,
+                                price,
+                                id
+            }
+            // console.log(`agregaste ${cantidad} ${name}`)
+            setCartArray([...cartArray,newproduct])
+            console.log(cartArray)
+        }
+
+        const delItem=(id)=>{
+            const newArray = cartArray.filter(element => element.id !== id)
+            setCartArray(newArray)
+        }
+
+        const clearCart=()=>{
+            setCartArray([])
+        }
+
+        const isInCart=(id)=>{
+            return cartArray.some(element => element.id === id)
+            
+        }
+
+
     // const cartArray=useContext(CartContext) hook al context
 
     const value = {

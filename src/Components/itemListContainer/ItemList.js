@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import Item from '../Card/Item'
 import { data } from '../Data/data.js'
 import { CircularProgress } from '@mui/material'
