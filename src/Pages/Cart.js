@@ -4,7 +4,7 @@ import ItemDetail from "../Components/ItemDetailContainer/ItemDetail"
 
 const Cart = ()=>{
     const {cartArray, delItem}=useContext(CartContext)
-    const {name,id,thumbnail,cantidad}=cartArray
+    
 
     return(
       <>    
@@ -14,9 +14,10 @@ const Cart = ()=>{
                         
                     return (  
                             <did key={items.id} className="blanco">
+                              <img src={items.thumbnail}/>
                               <p>nombre {items.name}</p>
                               <p>id{items.id}</p>
-                              <p>{items.thumbnail}</p>
+                              
                             </did>
                     )
                 })

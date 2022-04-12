@@ -8,21 +8,18 @@ const CartProvider = ({children}) =>{
     console.log(cartArray)
     
         const addProduct =(addProduct)=>{
-            const {name,cantidad,price,id,thumbnail}=addProduct
+            const {name,id,cantidad,price,thumbnail}=addProduct
              const newproduct= {
-                               
-                name,
-                id,                 cantidad,
+                                name,
+                                id,                 
+                                cantidad,
                                 price,
                                 thumbnail,  
                                 
             }
-
-            
-            console.log(`agregaste ${cantidad} ${name} ${price} ${id} ${thumbnail} `)
+            // console.log(`agregaste ${cantidad} ${name} ${price} ${id} ${thumbnail} `)
             setCartArray([...cartArray,newproduct])
-            // console.log(cartArray)
-            
+            // console.log(cartArray)  
         }
 
         const delItem=(id)=>{
