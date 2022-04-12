@@ -8,17 +8,21 @@ const CartProvider = ({children}) =>{
     console.log(cartArray)
     
         const addProduct =(addProduct)=>{
-            const {name,id,cantidad,price,thumbnail}=addProduct
-             const newproduct= {
-                                name,
-                                id,                 
-                                cantidad,
-                                price,
-                                thumbnail,  
-                                
-            }
+            const {name,thumbnail,price,id,cantidad}=addProduct
+            
+            const newproduct= {
+                name,
+                id,                 
+                cantidad,
+                price,
+                thumbnail,  
+                
+}
+            setCartArray([...cartArray,newproduct])   
+                
+            
             // console.log(`agregaste ${cantidad} ${name} ${price} ${id} ${thumbnail} `)
-            setCartArray([...cartArray,newproduct])
+
             // console.log(cartArray)  
         }
 
@@ -42,7 +46,10 @@ const CartProvider = ({children}) =>{
     const value = {
         cartArray,
         addProduct,
-        delItem
+        delItem,
+        clearCart,
+        isInCart
+
     }
 
     return(

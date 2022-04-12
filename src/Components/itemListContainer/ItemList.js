@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import Item from '../Card/Item'
 
 import { CircularProgress } from '@mui/material'
-import { useParams } from 'react-router-dom'
+
 
 const ItemList = ({}) =>{
     

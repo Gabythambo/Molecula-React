@@ -5,13 +5,14 @@ import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { CartContext } from '../Context/CartContext';
 
-const ItemDetail = ({name,thumbnail,price,stock,description,id,category,region,cantidad})=>{ 
-   const [inCart,setInCart]=useState(false)   
+const ItemDetail = ({name,thumbnail,price,stock,description,id,category,region,})=>{ 
+   
+const [inCart,setInCart]=useState(false)   
   const {addProduct} =useContext(CartContext)
 
    function onAdd(cantidad){
       setInCart(true) 
-      addProduct({name,cantidad,price,id,thumbnail})
+      addProduct({name,thumbnail,price,stock,description,id,category,region,cantidad})
    }
       
 
