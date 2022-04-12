@@ -2,14 +2,14 @@ import { useEffect, useState } from 'react'
 import Item from '../Card/Item'
 
 import { CircularProgress } from '@mui/material'
-
+import { useParams } from 'react-router-dom'
 
 const ItemList = ({}) =>{
     
 
     
 
-    const url="https://run.mocky.io/v3/65a134eb-d0a3-4d61-bdb9-18c3464fb492"
+    const url="https://run.mocky.io/v3/5b1bff1b-b54a-451a-aa76-28a16dd552aa"
 
     const [items,setItems]=useState([]);
     const [loading,setLoading]=useState([true])   

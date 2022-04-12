@@ -3,7 +3,7 @@ import { useContext } from "react"
 import { Button } from "@mui/material"
 
 const Cart = ()=>{
-    const {cartArray, delItem}=useContext(CartContext)
+    const {cartArray, delItem, total}=useContext(CartContext)
     
 
     return(
@@ -18,11 +18,12 @@ const Cart = ()=>{
                               <p>nombre {items.name}</p>
                               <p>id{items.id}</p>
                             <Button onClick={()=> delItem(items.id)} >eliminar</Button>
+                            <p>total  {total()}</p>
                             </did>
                     )
                 })
         }
-    
+    <p>total  {total}</p>
     </>
     )
 }

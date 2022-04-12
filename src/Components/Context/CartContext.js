@@ -60,6 +60,10 @@ const CartProvider = ({children}) =>{
             return cartArray.reduce( (acum,prod) => acum += prod.cantidad,0)
         }
 
+        const total=()=>{
+            return cartArray.reduce( (acum,prod)=>acum = acum + (prod.cantidad * prod.price),0 )
+        }
+
 
     // const badge=useContext(CartContext) hook al context
 
@@ -69,7 +73,8 @@ const CartProvider = ({children}) =>{
         delItem,
         clearCart,
         isInCart,
-        badge
+        badge,
+        total
     }
 
     return(
