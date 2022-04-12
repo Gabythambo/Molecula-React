@@ -4,12 +4,14 @@ import CartWidget from './cartWidget/carWidget'
 import { Link } from 'react-router-dom';
 import "./NavBar/NavBar.css"
 import MenuListComposition from './MenuListComposition/MenuListComposition';
-
+import Badge from '@mui/material/Badge';
+import { useContext } from 'react';
+import { CartContext } from "../Components/Context/CartContext"
 
 
 
 export default function NavBar()  {
-    
+    const {badge}=useContext(CartContext)
         return(
         <>
         
@@ -27,7 +29,8 @@ export default function NavBar()  {
                 <Button><Link className='color' to={'/contact'} >Contacto</Link></Button>
                 
             </ul>
-            <CartWidget/>
+           <Badge badgeContent={badge()} color="success"> <CartWidget/></Badge>
+            
             </header>
         
         </>

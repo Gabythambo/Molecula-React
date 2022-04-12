@@ -1,6 +1,6 @@
 import { CartContext } from "../Components/Context/CartContext"
 import { useContext } from "react"
-
+import { Button } from "@mui/material"
 
 const Cart = ()=>{
     const {cartArray, delItem}=useContext(CartContext)
@@ -17,6 +17,7 @@ const Cart = ()=>{
                               <img src={items.thumbnail}/>
                               <p>nombre {items.name}</p>
                               <p>id{items.id}</p>
+                            <Button onClick={()=> delItem(items.id)} >eliminar</Button>
                             </did>
                     )
                 })
