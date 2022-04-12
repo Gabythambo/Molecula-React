@@ -4,27 +4,20 @@ import ItemDetail from "../Components/ItemDetailContainer/ItemDetail"
 
 const Cart = ()=>{
     const {cartArray, delItem}=useContext(CartContext)
-    const {name,id}=cartArray
+    const {name,id,cantidad,thumbnail}=cartArray
 
     return(
       <>    
         {      
                  cartArray.map((items) =>{
               
-                      
-                    return (
-                            <ItemDetail key={items.id}
-                            name={items.name}
-                            thumbnail={items.thumbnail}
-                            price={items.price}
-                            stock={items.stock}
-                            id={items.id}
-                            description={items.description}
-                            category={items.category}
-                            region={items.region}
-    
-                            />
-                
+                        
+                    return (  
+                            <did key={items.id} className="blanco">
+                              <p>nombre {items.name}</p>
+                              <p>id {items.id}</p>
+                              <img src={`${items.thumbnail}`}></img>
+                            </did>
                     )
                 })
         }

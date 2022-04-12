@@ -1,4 +1,7 @@
 
+.blanco{
+  color: white;
+}
 .App-header {
   display: flex;
   flex-direction: row;

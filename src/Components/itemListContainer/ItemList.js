@@ -51,7 +51,7 @@ return(
                         
                         <Item
                         key={product.id}
-                          name={product.name}
+                         name={product.name}
                           thumbnail={product.thumbnail}
                           price={product.price}
                           stock={product.stock}

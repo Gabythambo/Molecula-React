@@ -4,7 +4,7 @@ import  Button from '@mui/material/Button';
 import {Link} from 'react-router-dom';
 
 
- const Item = ({name,thumbnail,price,stock,description,id,category,region})=>{    
+ const Item = ({id,name,thumbnail,price,stock,description,category,region})=>{    
     
    
 
