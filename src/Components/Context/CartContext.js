@@ -18,7 +18,7 @@ const CartProvider = ({children}) =>{
             }
 
             
-            console.log(`agregaste ${cantidad} ${name} ${price} ${id}`)
+            console.log(`agregaste ${cantidad} ${name} ${price} ${id} ${thumbnail} `)
             setCartArray([...cartArray,newproduct])
             // console.log(cartArray)
             
