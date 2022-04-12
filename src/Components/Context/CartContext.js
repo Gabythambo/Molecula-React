@@ -5,20 +5,26 @@ export const CartContext = createContext()
 const CartProvider = ({children}) =>{
     
     const [cartArray,setCartArray] = useState([]);
-    console.log(cartArray)
+    // console.log(cartArray)
     
-        const addProduct =(name,cantidad,price,id)=>{
+        const addProduct =(name,thumbnail,price,stock,description,id,category,region,cantidad)=>{
              const newproduct= {
                                 name,
-                                cantidad,
+                                thumbnail,
                                 price,
-                                id
+                                stock,
+                                description,
+                                id,
+                                category,
+                                region,
+                                cantidad,
+                                
             }
 
             
             console.log(`agregaste ${cantidad} ${name} ${price} ${id}`)
             setCartArray([...cartArray,newproduct])
-            console.log(cartArray)
+            // console.log(cartArray)
             
         }
 

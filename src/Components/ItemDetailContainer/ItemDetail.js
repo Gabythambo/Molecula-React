@@ -10,8 +10,8 @@ const ItemDetail = ({name,thumbnail,price,stock,description,id,category,region,c
   const {addProduct} =useContext(CartContext)
 
    function onAdd(cantidad){
-      setInCart(true)
-      addProduct(name,cantidad,price,id)
+      setInCart(true) 
+      addProduct(name,thumbnail,cantidad,price,id)
    }
       
 
