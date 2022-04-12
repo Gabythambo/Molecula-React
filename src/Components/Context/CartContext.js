@@ -7,7 +7,8 @@ const CartProvider = ({children}) =>{
     const [cartArray,setCartArray] = useState([]);
     console.log(cartArray)
     
-        const addProduct =(name,id,price,cantidad,thumbnail)=>{
+        const addProduct =(addProduct)=>{
+            const {name,cantidad,price,id,thumbnail}=addProduct
              const newproduct= {
                                
                 name,

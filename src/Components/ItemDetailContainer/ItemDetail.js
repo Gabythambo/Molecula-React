@@ -11,7 +11,7 @@ const ItemDetail = ({name,thumbnail,price,stock,description,id,category,region,c
 
    function onAdd(cantidad){
       setInCart(true) 
-      addProduct(name,cantidad,price,id)
+      addProduct({name,cantidad,price,id})
    }
       
 
