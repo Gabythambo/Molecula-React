@@ -10,7 +10,6 @@ const ItemDetailContainer = ({})=>{
 
     const [items,setItems]=useState([]);
        
-
     const getItems = async ()=>{
 
         try{
@@ -22,25 +21,13 @@ const ItemDetailContainer = ({})=>{
         catch (error){
             console.log(error)
         }
-    
     }   
-    
     useEffect(()=>{  
-        getItems(setItems);
-        
-        
-    
-    },[])
-
-      
-
-    
+        getItems(setItems); 
+    },[])   
 return(
-    <>
-  
-            
-        {
-            
+    <>    
+        {      
                  items.map((items) =>{
                         if (items.id == id)
                         

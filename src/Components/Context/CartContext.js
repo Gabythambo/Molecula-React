@@ -5,7 +5,8 @@ export const CartContext = createContext()
 const CartProvider = ({children}) =>{
     
     const [cartArray,setCartArray] = useState([]);
-      
+    console.log(cartArray)
+    
         const addProduct =(name,cantidad,price,id)=>{
              const newproduct= {
                                 name,
@@ -13,9 +14,12 @@ const CartProvider = ({children}) =>{
                                 price,
                                 id
             }
-            // console.log(`agregaste ${cantidad} ${name}`)
+
+            
+            console.log(`agregaste ${cantidad} ${name} ${price} ${id}`)
             setCartArray([...cartArray,newproduct])
             console.log(cartArray)
+            
         }
 
         const delItem=(id)=>{
@@ -26,7 +30,7 @@ const CartProvider = ({children}) =>{
         const clearCart=()=>{
             setCartArray([])
         }
-
+ 
         const isInCart=(id)=>{
             return cartArray.some(element => element.id === id)
             
@@ -38,6 +42,7 @@ const CartProvider = ({children}) =>{
     const value = {
         cartArray,
         addProduct,
+        delItem
     }
 
     return(
