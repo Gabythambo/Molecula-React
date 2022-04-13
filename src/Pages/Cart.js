@@ -1,19 +1,29 @@
 import { CartContext } from "../Components/Context/CartContext"
 import { useContext } from "react"
 import { Button } from "@mui/material"
+import { Link } from "react-router-dom"
 
 const Cart = ()=>{
-    const {cartArray, delItem, total}=useContext(CartContext)
+    const {cartArray, delItem, total, clearCart}=useContext(CartContext)
     
-
     return(
-      <>    
-        {      
+      <div className="ContainerProducts">    
+        <h1>CART</h1>
+
+{
+                (cartArray.length === 0 )
+                &&
+                <>
+                <p>El carrito esta vacio</p>
+                <Link to="/"> <Button>sVolver al Home</Button></Link>
+                </>
+
+}
+{      
                  cartArray.map((items) =>{
               
-                        
                     return (  
-                            <did key={items.id} className="blanco">
+                            <did  key={items.id} >
                               <img src={items.thumbnail}/>
                               <p>nombre {items.name}</p>
                               <p>id{items.id}</p>
@@ -22,9 +32,21 @@ const Cart = ()=>{
                             </did>
                     )
                 })
+ }
+
+
+
+
+
+{
+        <>
+        
+        <p>total  {total}</p> <Link to="/cart"> <Button onClick={()=>clearCart()}>Vaciar carrito</Button></Link>  
+        </>
         }
-    <p>total  {total}</p>
-    </>
-    )
+        
+    </div>
+
+)
 }
 export default Cart
