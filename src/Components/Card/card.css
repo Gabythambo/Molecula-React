@@ -1,4 +1,4 @@
-git s
+
 .card__img {
     width: 100%;
   }
@@ -12,7 +12,7 @@ git s
 
 body {
   font-family: "Noto Sans", sans-serif;
-  color:black
+  
 }
 
 .wrapper {
@@ -27,8 +27,9 @@ body {
   box-shadow: 0 0 10px 5px gray;
   border-radius: 2 rem;
   min-width: 28rem;
-  display: flex;}
-
+  display: flex;
+  color:black !important
+}
   img {
     
     height: 11rem;

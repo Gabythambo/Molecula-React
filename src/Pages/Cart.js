@@ -26,9 +26,8 @@ const Cart = ()=>{
                             <did  key={items.id} >
                               <img src={items.thumbnail}/>
                               <p>nombre {items.name}</p>
-                              <p>id{items.id}</p>
                             <Button onClick={()=> delItem(items.id)} >eliminar</Button>
-                            <p>total  {total()}</p>
+                            <p>precio unitario  {items.price}</p>
                             </did>
                     )
                 })
@@ -39,9 +38,12 @@ const Cart = ()=>{
 
 
 {
-        <>
-        
-        <p>total  {total}</p> <Link to="/cart"> <Button onClick={()=>clearCart()}>Vaciar carrito</Button></Link>  
+       (cartArray.length >=1)
+       &&
+       <>
+        <p>total  {total()}</p> 
+        <Link to="/cart"> <Button onClick={()=>clearCart()}>Vaciar carrito</Button></Link>  
+        <Link to="/*"> <Button onClick={()=>clearCart()}>finalizar Compra</Button></Link>  
         </>
         }
         

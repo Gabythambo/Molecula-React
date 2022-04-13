@@ -10,7 +10,7 @@ import ContactPage from "./Pages/ContactPage";
 import Home from "./Pages/Home"
 import ItemDetailPage from "./Pages/ItemDetailPage";
 import RegionsPage from "./Pages/RegionsPage";
-
+import NotFound from "./Pages/Error404";
 
 function App() {
   return (
@@ -19,11 +19,13 @@ function App() {
        <BrowserRouter>
       <NavBar />
         <Routes>
+        <Route path="*" element={<NotFound/>} />
           <Route path="/" element={<Home/>}/>
           <Route path="/region/:region" element={<RegionsPage/>}/>
           <Route path="/contact" element={<ContactPage/>}/>
           <Route path="/producto/:id" element={<ItemDetailPage/>}/>
           <Route path="/cart" element={<Cart/>}/>
+          
         </Routes>
       </BrowserRouter> 
       </CartContext>
