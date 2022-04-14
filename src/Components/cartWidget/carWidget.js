@@ -5,7 +5,9 @@ import { Link } from 'react-router-dom';
 
 export default function iconCart ()  {
         return(
-                <Link to ='/cart'> <ShoppingCartIcon color="primary"/> </Link>
+                // <Link to ='/cart'> 
+                <ShoppingCartIcon color="primary"/>
+                // </Link> //
            
            
         )

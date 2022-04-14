@@ -1,0 +1,104 @@
+
+.media-product img {
+    max-width: 5rem;
+
+    max-height: fit-content;
+    object-fit: contain;
+
+
+}
+.media {
+    display: flex;
+    align-items: flex-start;
+}
+.media-product {
+    position: relative;
+    align-items: center;
+    overflow: hidden;
+}
+.media-product .media-body {
+    margin-left: 1.25rem;
+}
+.media-body {
+    flex: 1;
+}
+.media-product .media-title {
+    font-size: 1rem;
+    font-weight: 400;
+    font-family: "Open Sans", sans-serif;
+    margin-bottom: 0;
+}
+.media-product .media-subtitle {
+    font-size: 0.875rem;
+}
+.cart-item .cart-item-price {
+    color: #000;
+    font-family: "Muli", sans-serif;
+}
+.cart-item .cart-item-close {
+    -webkit-transform: translate(0, -50%);
+    -moz-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    transition: all 0.2s;
+    -webkit-transition-delay: 0s;
+    -moz-transition-delay: 0s;
+    transition-delay: 0s;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    display: block;
+    width: 1.875rem;
+    height: 1.875rem;
+    background: #efefef;
+    border-radius: 50%;
+}
+.cart-item .cart-item-close > * {
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: #101010;
+}
+.offcanvas-end
+{
+    width: 350px;
+}
+.cart-item {
+    position: relative;
+    padding-right: 3.75rem;
+    overflow: hidden;
+}
+.gutter-3 > * {
+    margin-bottom: 0 !important;
+    padding: 15px;
+}
+.gutter-0 {
+    margin-left: 0;
+    margin-right: 0;
+}
+.gutter-0 > * {
+    padding: 0;
+}
+.btn-block {
+    display: block;
+    width: 100%;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #4F944F;
+    border-color: #4F944F;
+}
+.btn-secondary {
+    color: #101010;
+    background-color: #dddddd;
+    border-color: #dddddd;
+}
+.btn-group-lg>.btn, .btn-lg {
+    padding: 0.5rem 1rem;
+    font-size: 1.25rem;
+    border-radius: 0;
+}

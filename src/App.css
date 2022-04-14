@@ -1,7 +1,5 @@
 
-.ContainerProducts{
-  color: white;
-}
+
 .App-header {
   display: flex;
   flex-direction: row;
@@ -26,7 +24,8 @@ img{
   display: inline-flex;
   justify-content: center;
 }
-h2 a {color: aliceblue;
+h2 a {
+  /* color: aliceblue; */
 justify-content: center;}
 
 ._p-features {

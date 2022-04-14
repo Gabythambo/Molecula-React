@@ -17,9 +17,9 @@ function App() {
     <>
       <CartContext>
        <BrowserRouter>
-      <NavBar />
+        <NavBar />
         <Routes>
-        <Route path="*" element={<NotFound/>} />
+         <Route path="*" element={<NotFound/>} />
           <Route path="/" element={<Home/>}/>
           <Route path="/region/:region" element={<RegionsPage/>}/>
           <Route path="/contact" element={<ContactPage/>}/>
