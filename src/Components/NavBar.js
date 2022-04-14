@@ -27,7 +27,7 @@ export default function NavBar()  {
             </div>
            
             <ul>
-                <Button ><Link className='color' to={'/'}>Home</Link></Button>
+                <Button><Link className='color' to={'/'}>Home</Link></Button>
                 <Button><MenuListComposition>Regiones</MenuListComposition></Button>
                 <Button><Link className='color' to={''}>Quiz</Link></Button>
                 <Button><Link className='color' to={'/contact'} >Contacto</Link></Button>
@@ -131,12 +131,12 @@ export default function NavBar()  {
                       <div class="container">
                         <hr />
                           <div class="row gutter-0">
-                            <div class="col d-none d-md-block">
-                            <Link className='btn btn-lg btn-block btn-secondary' to={'/cart'} >View Cart</Link>
+                            <div class="col">
+                            <Link className='btn btn-md btn-block btn-secondary' to={'/cart'} >View Cart</Link>
                               {/* <a href="http://localhost:3000/cart" class="">View Cart</a> */}
                             </div>
                             <div class="col">
-                              <a href="checkout.html" class="btn btn-lg btn-block btn-primary">Checkout</a>
+                              <a href="checkout.html" class="btn btn-md btn-block btn-primary">Checkout</a>
                             </div>
                           </div>
                         </div>
