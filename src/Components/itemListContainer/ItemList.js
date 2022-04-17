@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react'
 import Item from '../Card/Item'
 
 import { CircularProgress } from '@mui/material'
-import { useParams } from 'react-router-dom'
+import db from '../../fireBaseConfig'
+    import { collection,getDocs} from 'firebase/firestore'
 
 const ItemList = ({}) =>{
     const url="https://run.mocky.io/v3/5b1bff1b-b54a-451a-aa76-28a16dd552aa"
@@ -15,18 +16,38 @@ const ItemList = ({}) =>{
     2000);
     
     const getItems = async ()=>{
-                
-
-        try{
-            const response = await fetch(url);
-            const data = await response.json();
-            setLoading(false)    
-            setItems(data)
             
-        }
-        catch (error){
-            console.log(error)
-        }
+        const itemsCollection = collection(db,'Productos')
+        const productSnapShot= await getDocs(itemsCollection)
+        
+        const productList = productSnapShot.docs.map((doc)=>{
+            // console.log(doc.data()) 
+            // console.log(doc.id)
+            const product = doc.data()
+            product.id = doc.id
+            setLoading(false) 
+            console.log(product)
+            
+            
+
+            
+         
+
+
+        })
+        
+
+        console.log(productList)
+        // try{
+        //     const response = await fetch(url);
+        //     const data = await response.json();
+           //     setLoading(false) 
+        //     setItems(data)
+            
+        // }
+        // catch (error){
+        //     console.log(error)
+        // }
     }   
     useEffect(()=>{  
         getItems(setItems); 

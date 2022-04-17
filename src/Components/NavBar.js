@@ -20,8 +20,8 @@ export default function NavBar()  {
            <header className='App-header'>
            <div className="app">
               
-              <nav class="navbar navbar-light bg-light fixed-top">
-                <div class="container-fluid">
+              <nav className="navbar navbar-light bg-light fixed-top">
+                <div className="container-fluid">
                 <div>
             <h2><Link to={'/'}>Molecula</Link></h2>
             </div>
@@ -33,17 +33,17 @@ export default function NavBar()  {
                 <Button><Link className='color' to={'/contact'} >Contacto</Link></Button>
                 
             </ul>
-            <Badge badgeContent={badge()} color="success"><button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-                    <span class="bi bi-cart-dash-fill"></span>
+            <Badge badgeContent={badge()} color="success"><button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                    <span className="bi bi-cart-dash-fill"></span>
                     <CartWidget/></button></Badge> 
                   
-                  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                    <div class="offcanvas-header">
-                      <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Cart</h5>
-                      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                  <div className="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                    <div className="offcanvas-header">
+                      <h5 className="offcanvas-title" id="offcanvasNavbarLabel">Cart</h5>
+                      <button type="button" className="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
-                    <div class="offcanvas-body">
-                    <div class="row gutter-3">
+                    <div className="offcanvas-body">
+                    <div className="row gutter-3">
 
 
 
@@ -54,21 +54,21 @@ export default function NavBar()  {
                  cartArray.map((items) =>{
                     return ( 
                     <div className="col-12" key={items.id}>
-                    <div class="cart-item cart-item-sm">
-                      <div class="row align-items-center">
-                        <div class="col-lg-9">
-                          <div class="media media-product">
+                    <div className="cart-item cart-item-sm">
+                      <div className="row align-items-center">
+                        <div className="col-lg-9">
+                          <div className="media media-product">
                             <a href="#!"><img className='imgModal' src={items.thumbnail} alt="Image" /></a>
-                            <div class="media-body">
-                              <h5 class="media-title">{items.name}</h5>
-                              <span class="media-subtitle">{items.name}</span>
+                            <div className="media-body">
+                              <h5 className="media-title">{items.name}</h5>
+                              <span className="media-subtitle">{items.name}</span>
                             </div>
                           </div>
                         </div>
-                        <div class="col-lg-3 text-center text-lg-right">
-                          <span class="cart-item-price">${items.price}</span>
+                        <div className="col-lg-3 text-center text-lg-right">
+                          <span className="cart-item-price">${items.price}</span>
                         </div>
-                        <a href="#!" class="cart-item-close"><i class="bi bi-x"></i></a>
+                        <a href="#!" className="cart-item-close"><i className="bi bi-x"></i></a>
                       </div>
                     </div>
                   </div>
@@ -89,54 +89,17 @@ export default function NavBar()  {
 
 
                         
-                        {/* <div class="col-12">
-                          <div class="cart-item cart-item-sm">
-                            <div class="row align-items-center">
-                              <div class="col-lg-9">
-                                <div class="media media-product">
-                                  <a href="#!"><img src="https://therichpost.com/wp-content/uploads/2020/06/jeans2.jpg" alt="Image" /></a>
-                                  <div class="media-body">
-                                    <h5 class="media-title">jeans 2</h5>
-                                    <span class="media-subtitle">Red</span>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="col-lg-3 text-center text-lg-right">
-                                <span class="cart-item-price">$120</span>
-                              </div>
-                              <a href="#!" class="cart-item-close"><i class="bi bi-x"></i></a>
-                            </div>
-                          </div>
-                        </div> */}
-                        {/* <div class="col-12">
-                          <div class="cart-item cart-item-sm">
-                            <div class="row align-items-center">
-                              <div class="col-lg-9">
-                                <div class="media media-product">
-                                  <a href="#!"><img src="https://therichpost.com/wp-content/uploads/2020/06/jeans1.jpg" alt="Image" /></a>
-                                  <div class="media-body">
-                                    <h5 class="media-title">jeans 3</h5>
-                                    <span class="media-subtitle">Black</span>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="col-lg-3 text-center text-lg-right">
-                                <span class="cart-item-price">$132</span>
-                              </div>
-                              <a href="#!" class="cart-item-close"><i class="bi bi-x"></i></a>
-                            </div>
-                          </div>
-                        </div> */}
+                        
                       </div>
-                      <div class="container">
+                      <div className="container">
                         <hr />
-                          <div class="row gutter-0">
-                            <div class="col">
+                          <div className="row gutter-0">
+                            <div className="col">
                             <Link className='btn btn-md btn-block btn-secondary' to={'/cart'} >View Cart</Link>
-                              {/* <a href="http://localhost:3000/cart" class="">View Cart</a> */}
+                              {/* <a href="http://localhost:3000/cart" className="">View Cart</a> */}
                             </div>
-                            <div class="col">
-                              <a href="checkout.html" class="btn btn-md btn-block btn-primary">Checkout</a>
+                            <div className="col">
+                              <a href="checkout.html" className="btn btn-md btn-block btn-primary">Checkout</a>
                             </div>
                           </div>
                         </div>
