@@ -58,7 +58,7 @@ export default function NavBar()  {
                       <div class="row align-items-center">
                         <div class="col-lg-9">
                           <div class="media media-product">
-                            <a href="#!"><img src={items.thumbnail} alt="Image" /></a>
+                            <a href="#!"><img className='imgModal' src={items.thumbnail} alt="Image" /></a>
                             <div class="media-body">
                               <h5 class="media-title">{items.name}</h5>
                               <span class="media-subtitle">{items.name}</span>

@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import Badge from '@mui/material/Badge';
 import { useContext } from 'react';
 import { CartContext } from "../Context/CartContext"
-// import "./navBar.css"
+import "./navBar.css"
 
 import { Navbar,Container,Nav,NavDropdown } from 'react-bootstrap';
 
@@ -33,13 +33,15 @@ export default function NavBar()  {
         </NavDropdown>
         
         <Link to="#link" className='nav-link'>Contact</Link>
-      
+                
       </Nav>  
       </Navbar.Collapse>
-     <div> <Badge badgeContent={badge()} color="success"><Button className="button" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-            <span className="bi bi-cart-dash-fill"></span>
+      <Badge badgeContent={badge()} color="success" className=''><Button className="button" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+            <span className="bi"></span>
             <CartWidget/></Button></Badge>
-  </div>
+  
+      
+     
   </Container>
   
 </Navbar>
@@ -65,7 +67,7 @@ export default function NavBar()  {
                       <div className="row align-items-center">
                         <div className="col-lg-9">
                           <div className="media media-product">
-                            <a href="#!"><img src={items.thumbnail} alt="Image" /></a>
+                            <a href="#!"><img className='media-product' src={items.thumbnail} alt="Image" /></a>
                             <div className="media-body">
                               <h5 className="media-title">{items.name}</h5>
                               <span className="media-subtitle">{items.name}</span>

@@ -5,23 +5,15 @@ import { CircularProgress } from '@mui/material'
 import { useParams } from 'react-router-dom'
 
 const ItemList = ({}) =>{
-    
-
-    
-
     const url="https://run.mocky.io/v3/5b1bff1b-b54a-451a-aa76-28a16dd552aa"
 
     const [items,setItems]=useState([]);
     const [loading,setLoading]=useState([true])   
     setTimeout(()=>{
                   
-
-
-  
     },
     2000);
-
-
+    
     const getItems = async ()=>{
                 
 
