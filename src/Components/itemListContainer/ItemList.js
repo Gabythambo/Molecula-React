@@ -1,19 +1,23 @@
 import { useEffect, useState } from 'react'
-import Item from '../Card/Item'
+// import Item from '../Card/Item'
 
-import { CircularProgress } from '@mui/material'
+import { CircularProgress, filledInputClasses } from '@mui/material'
 import db from '../../fireBaseConfig'
     import { collection,getDocs} from 'firebase/firestore'
+import { Category } from '@mui/icons-material'
+import { useParams } from 'react-router-dom'
 
-const ItemList = ({}) =>{
-    const url="https://run.mocky.io/v3/5b1bff1b-b54a-451a-aa76-28a16dd552aa"
+const ItemList = ({childrem}) =>{
+    // const url="https://run.mocky.io/v3/5b1bff1b-b54a-451a-aa76-28a16dd552aa"
 
     const [items,setItems]=useState([]);
-    const [loading,setLoading]=useState([true])   
-    setTimeout(()=>{
+    const [loading,setLoading]=useState([true]) 
+    const {region} =useParams() 
+   
+    // setTimeout(()=>{
                   
-    },
-    2000);
+    // },
+    // 2000);
     
     const getItems = async ()=>{
             
@@ -25,39 +29,51 @@ const ItemList = ({}) =>{
             // console.log(doc.id)
             const product = doc.data()
             product.id = doc.id
-            setLoading(false) 
-            console.log(product)
             
+                return product
             
+             }
+             )
+        return productList
 
-            
-         
-
-
-        })
         
-
-        console.log(productList)
-        // try{
-        //     const response = await fetch(url);
-        //     const data = await response.json();
-           //     setLoading(false) 
-        //     setItems(data)
-            
-        // }
-        // catch (error){
-        //     console.log(error)
-        // }
+        
     }   
+    
     useEffect(()=>{  
-        getItems(setItems); 
+     setLoading(false) 
+     
+      
+       getItems().then((productos)=>{
+                        setLoading(false)
+                        setItems(productos)
+                        console.log(productos)
+                        // console.log(items)
+
+
+
+       } ) 
         
+   
     },[])
 
+    // const filterProductByCategory = (array,region)=>{
+    //     return array.map((product, i )=>{
+    //         if(product.region === "Central America"){
+               
+    //             return setItems(items =>[...items,product])
+                
+                
+    //         }
+    //     })
+    // }
 
+    
 return(
+    
     <div className='wrapper'>
-        {
+        {/* {
+            
              loading ? <CircularProgress /> :
                 items.map((product) =>{
                     return (
@@ -79,7 +95,7 @@ return(
 
         }
         
-        
+         */}
     </div>
 
 )
