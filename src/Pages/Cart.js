@@ -73,26 +73,27 @@ const Cart = ()=>{
                 </div>
                 <div class="row py-5 p-4 bg-white rounded shadow-sm">
                 <div class="col-lg-6">
-                    <div class="bg-light rounded-pill px-4 py-3 text-uppercase fw-bold">Coupon code</div>
+                    <div class="bg-light rounded-pill px-4 py-3 text-uppercase fw-bold">Buyer</div>
                     <div class="p-4">
-                    <p class="mb-4"><em>If you have a coupon code, please enter it in the box below</em></p>
+                    <p class="mb-4"><em>Please enter your name in the box below.</em></p>
                     <div class="input-group mb-4 border rounded-pill p-2">
-                        <input type="text" placeholder="Apply coupon" aria-describedby="button-addon3" class="form-control border-0" />
+                        <input type="text" placeholder="complete name" aria-describedby="button-addon3" class="form-control border-0" />
                         <div class="input-group-append border-0">
-                        <button id="button-addon3" type="button" class="btn btn-dark px-4 rounded-pill"><i class="fa fa-gift mr-2"></i>Apply coupon</button>
                         </div>
                     </div>
                     </div>
-                    <div class="bg-light rounded-pill px-4 py-3 text-uppercase fw-bold">Instructions for seller</div>
+                    <div class="bg-light rounded-pill px-4 py-3 text-uppercase fw-bold">Phone Contact</div>
                     <div class="p-4">
-                    <p class="mb-4"><em>If you have some information for the seller you can leave them in the box below</em></p>
-                    <textarea name="" cols="30" rows="2" class="form-control"></textarea>
+                    <p class="mb-4"><em>Please enter your phone number in the box below.</em></p>
+                    {/* <textarea name="" cols="30" rows="2" class="form-control"></textarea> */}
+                    <input type="text" placeholder="User@mail.com" aria-describedby="button-addon3" class="form-control border-0" />
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <div class="bg-light rounded-pill px-4 py-3 text-uppercase fw-bold">Order summary </div>
+                    <div class="bg-light rounded-pill px-4 py-3 text-uppercase fw-bold">E-mail Contact</div>
                     <div class="p-4">
-                    <p class="mb-4"><em>Shipping and additional costs are calculated based on values you have entered.</em></p>
+                    <p class="mb-4"><em>Please enter your phone number in the box below.</em></p>
+                    <input type="text" placeholder="+34 467 857 372" aria-describedby="button-addon3" class="form-control border-0" />
                     <ul class="list-unstyled mb-4">
                         <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Order Subtotal </strong><strong>${total()}</strong></li>
                         <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Shipping and handling</strong><strong>$10.00</strong></li>
@@ -100,7 +101,7 @@ const Cart = ()=>{
                         <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Total</strong>
                         <h5 class="fw-bold">${total()+10}</h5>
                         </li>
-                    </ul><a href="#" class="btn btn-dark rounded-pill py-2 d-md-block">Procceed to checkout</a>
+                    </ul><Link  to={'/'} class="btn btn-dark rounded-pill py-2 d-md-block">Procceed to checkout</Link>
                     </div>
                 </div>
                 </div>

@@ -90,11 +90,8 @@ export default function NavBar()  {
                         <hr />
                           <div className="row gutter-0">
                             <div className="col">
-                            <Link className='btn btn-md btn-block btn-secondary' to={'/cart'} >View Cart</Link>
+                            <Link className='btn btn-md btn-block btn-secondary' to={'/cart'} >Checkout</Link>
                               {/* <a href="http://localhost:3000/cart" className="">View Cart</a> */}
-                            </div>
-                            <div className="col">
-                              <a href="checkout.html" className="btn btn-md btn-block btn-primary">Checkout</a>
                             </div>
                           </div>
                         </div>

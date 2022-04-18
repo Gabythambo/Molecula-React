@@ -45,10 +45,6 @@ export default function NavBar()  {
                     <div className="offcanvas-body">
                     <div className="row gutter-3">
 
-
-
-
-
 {                        
                               
                  cartArray.map((items) =>{
