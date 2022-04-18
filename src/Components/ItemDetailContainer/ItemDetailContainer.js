@@ -1,13 +1,12 @@
 import { useEffect, useState } from 'react'
 import ItemDetail from './ItemDetail';
-import { Navigate, useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import db from '../../fireBaseConfig';
 import { doc,getDoc } from 'firebase/firestore';
 const ItemDetailContainer = ({})=>{
 
     const {id}=useParams()
     const navigate=useNavigate()
-    const url="https://run.mocky.io/v3/5b1bff1b-b54a-451a-aa76-28a16dd552aa"
 
     const [items,setItems]=useState([]);
        

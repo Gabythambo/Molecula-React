@@ -5,6 +5,7 @@ import { Link } from "react-router-dom"
 
 const Cart = ()=>{
     const {cartArray, delItem, total, clearCart}=useContext(CartContext)
+    const {name,thumbnail,price,id,cantidad}=cartArray
     
     return(
 
@@ -33,48 +34,37 @@ const Cart = ()=>{
                             </th>
                         </tr>
                         </thead>
+                        
                         <tbody>
-                        <tr>
-                            <th scope="row" class="border-0">
-                            <div class="p-2">
-                                <img src="https://therichpost.com/wp-content/uploads/2021/05/dummyimage400x300.jpg" alt="" width="70" class="img-fluid rounded shadow-sm" />
-                                <div class="ms-3 d-inline-block align-middle">
-                                <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block align-middle">Product 1</a></h5>
-                                </div>
-                            </div>
-                            </th>
-                            <td class="border-0 align-middle"><strong>$79.00</strong></td>
-                            <td class="border-0 align-middle"><strong>3</strong></td>
-                            <td class="border-0 align-middle"><a href="#" class="text-dark"><i class="bi bi-trash"></i></a></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">
-                            <div class="p-2">
-                                <img src="https://therichpost.com/wp-content/uploads/2021/05/dummyimage400x300.jpg" alt="" width="70" class="img-fluid rounded shadow-sm" />
-                                <div class="ms-3 d-inline-block align-middle">
-                                <h5 class="mb-0"><a href="#" class="text-dark d-inline-block">Product 2</a></h5>
-                                </div>
-                            </div>
-                            </th>
-                            <td class="align-middle"><strong>$79.00</strong></td>
-                            <td class="align-middle"><strong>3</strong></td>
-                            <td class="align-middle"><a href="#" class="text-dark"><i class="bi bi-trash"></i></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">
-                            <div class="p-2">
-                                <img src="https://therichpost.com/wp-content/uploads/2021/05/dummyimage400x300.jpg" alt="" width="70" class="img-fluid rounded shadow-sm" />
-                                <div class="ms-3 d-inline-block align-middle">
-                                <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block">Product 3</a></h5>
-                                </div>
-                            </div>
-                            </th>
-                            <td class="align-middle"><strong>$79.00</strong></td>
-                            <td class="align-middle"><strong>3</strong></td>
-                            <td class="align-middle"><a href="#" class="text-dark"><i class="bi bi-trash"></i></a>
-                            </td>
-                        </tr>
+                       
+                        {
+                (cartArray.length === 0 )
+                &&
+                <>
+                <h4>El carrito esta vacio</h4>
+                <Link to="/"> <Button>Volver al Home</Button></Link>
+                </>
+}       
+                        {                        
+                              
+                              cartArray.map((items) =>{
+                                 return ( 
+                                    <tr>
+                                    <th scope="row" class="border-0">
+                                    <div class="p-2">
+                                        <img src={items.thumbnail} alt="" width="70" class="img-fluid rounded shadow-sm" />
+                                        <div class="ms-3 d-inline-block align-middle">
+                                        <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block align-middle">{items.name}</a></h5>
+                                        </div>
+                                    </div>
+                                    </th>
+                                    <td class="border-0 align-middle"><strong>{items.price}</strong></td>
+                                    <td class="border-0 align-middle"><strong>{items.cantidad}</strong></td>
+                                    <td class="border-0 align-middle"><a href="#" class="text-dark"><i class="bi bi-trash"></i></a></td>
+                                </tr>
+                                 )
+                             })
+                         }
                         </tbody>
                     </table>
                     </div>
@@ -104,11 +94,11 @@ const Cart = ()=>{
                     <div class="p-4">
                     <p class="mb-4"><em>Shipping and additional costs are calculated based on values you have entered.</em></p>
                     <ul class="list-unstyled mb-4">
-                        <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Order Subtotal </strong><strong>$390.00</strong></li>
+                        <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Order Subtotal </strong><strong>${total()}</strong></li>
                         <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Shipping and handling</strong><strong>$10.00</strong></li>
-                        <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Tax</strong><strong>$0.00</strong></li>
+                        {/* <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Tax</strong><strong>$0.00</strong></li> */}
                         <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Total</strong>
-                        <h5 class="fw-bold">$400.00</h5>
+                        <h5 class="fw-bold">${total()+10}</h5>
                         </li>
                     </ul><a href="#" class="btn btn-dark rounded-pill py-2 d-md-block">Procceed to checkout</a>
                     </div>
@@ -129,11 +119,9 @@ const Cart = ()=>{
 //                 <p>El carrito esta vacio</p>
 //                 <Link to="/"> <Button>sVolver al Home</Button></Link>
 //                 </>
-
 // }  
 // {      
 //                  cartArray.map((items) =>{
-              
 //                     return (  
 //                             <did  key={items.id} >
 //                               <img src={items.thumbnail}/>
@@ -144,11 +132,6 @@ const Cart = ()=>{
 //                     )
 //                 })
 //  }
-
-
-
-
-
 // {
 //        (cartArray.length >=1)
 //        &&
@@ -158,7 +141,7 @@ const Cart = ()=>{
 //         <Link to="/*"> <Button onClick={()=>clearCart()}>finalizar Compra</Button></Link>  
 //         </>
 //         }
-        
+   
 //     </div>
 
 )

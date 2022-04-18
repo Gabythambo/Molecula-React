@@ -28,7 +28,7 @@ const ItemList = ({childrem}) =>{
      getItems().then((productos)=>{
                         setLoading(false)
                         setItems(productos)
-                        console.log(productos)          
+                        
        }) 
     },[])
 
