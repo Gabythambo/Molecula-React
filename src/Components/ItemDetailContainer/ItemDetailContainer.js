@@ -31,7 +31,7 @@ const ItemDetailContainer = ({})=>{
     }   
     useEffect(()=>{  
         getItems(setItems); 
-    },[])   
+    },[id])   
 return(
     <>    
             

@@ -1,15 +1,60 @@
 import { CartContext } from "../Components/Context/CartContext"
-import { useContext } from "react"
+import { useContext, useState } from "react"
 import { Button } from "@mui/material"
 import { Link } from "react-router-dom"
-
+import db from "../fireBaseConfig"
+import { addDoc,collection} from "firebase/firestore"
 const Cart = ()=>{
     const {cartArray, delItem, total, clearCart}=useContext(CartContext)
     const {name,thumbnail,price,id,cantidad}=cartArray
     
-    return(
+    const [formData,setFormData]=useState({ 
+        name:'',
+        phone:'',
+        email:'',
+        })
+ 
+     const [order,setOrder]=useState(
+        {
+            buyer:{ 
+                name:'',
+                phone:'',
+                email:'',
+                },
+            items:cartArray.map((cartArray)=>{
+                const{id,name,price,cantidad}=cartArray
+                return{
+                    id:id,
+                    name:name,
+                    price:price,
+                    cantidad:cantidad
+                }
+            }),
+            date:'',
+            total:total()
+        }
+        )
+        const handleChange=(e)=>{
+        setFormData({
+            ...formData,
+            [e.target.name]:e.target.value
+            })
+        }
 
-<div className="cart">
+        const handleSubmit = (e)=>{
+            e.preventDefault() 
+            setOrder({
+                ...order,
+                buyer:formData
+            })
+            const orderFireBase = collection(db,'order')
+            const orderDoc = addDoc(orderFireBase,order)
+        }
+        
+    console.log(order) /* muestra orden procesada*/
+     
+        return(
+    <div className="cart">
          
          <section class="py-0">
                 <div class="container px-4 px-lg-5 my-5">
@@ -34,41 +79,36 @@ const Cart = ()=>{
                             </th>
                         </tr>
                         </thead>
-                        
                         <tbody>
-                       
-                        {
-                (cartArray.length === 0 )
-                &&
-                <>
-                <h4>El carrito esta vacio</h4>
-                <Link to="/"> <Button>Volver al Home</Button></Link>
-                </>
-}       
+                {(cartArray.length === 0 )
+                    &&
+                    <>
+                    <h4>El carrito esta vacio</h4>
+                    <Link to="/"> <Button>Volver al Home</Button></Link>
+                    </>
+                }       
                         {                        
                               
-                              cartArray.map((items) =>{
-                                 return ( 
-                                    <tr>
-                                    <th scope="row" class="border-0">
-                                    <div class="p-2">
-                                        <img src={items.thumbnail} alt="" width="70" class="img-fluid rounded shadow-sm" />
-                                        <div class="ms-3 d-inline-block align-middle">
-                                        <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block align-middle">{items.name}</a></h5>
-                                        </div>
-                                    </div>
-                                    </th>
-                                    <td class="border-0 align-middle"><strong>{items.price}</strong></td>
-                                    <td class="border-0 align-middle"><strong>{items.cantidad}</strong></td>
-                                    <td class="border-0 align-middle"><a href="#" class="text-dark"><i class="bi bi-trash"></i></a></td>
-                                </tr>
-                                 )
-                             })
-                         }
+                        cartArray.map((items) =>{
+                            return ( 
+                            <tr key={items.id}>
+                            <th scope="row" class="border-0">
+                            <div class="p-2">
+                                <img src={items.thumbnail} alt="" width="70" class="img-fluid rounded shadow-sm" />
+                                <div class="ms-3 d-inline-block align-middle">
+                                <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block align-middle">{items.name}</a></h5>
+                                </div>
+                            </div>
+                            </th>
+                            <td class="border-0 align-middle"><strong>{items.price}</strong></td>
+                            <td class="border-0 align-middle"><strong>{items.cantidad}</strong></td>
+                            <td class="border-0 align-middle"><a href="#" class="text-dark"><i class="bi bi-trash"></i></a></td>
+                        </tr>
+                            )})
+                        }
                         </tbody>
                     </table>
-                    </div>
-                   
+                </div>   
                 </div>
                 </div>
                 <div class="row py-5 p-4 bg-white rounded shadow-sm">
@@ -77,31 +117,31 @@ const Cart = ()=>{
                     <div class="p-4">
                     <p class="mb-4"><em>Please enter your name in the box below.</em></p>
                     <div class="input-group mb-4 border rounded-pill p-2">
-                        <input type="text" placeholder="complete name" aria-describedby="button-addon3" class="form-control border-0" />
+                        <input type="text" name="name" value={formData.name} placeholder="complete name" onChange={handleChange} aria-describedby="button-addon3" class="form-control border-0" />
                         <div class="input-group-append border-0">
                         </div>
                     </div>
                     </div>
                     <div class="bg-light rounded-pill px-4 py-3 text-uppercase fw-bold">Phone Contact</div>
                     <div class="p-4">
-                    <p class="mb-4"><em>Please enter your phone number in the box below.</em></p>
+                    <p class="mb-4"><em>Please enter your email in the box below.</em></p>
                     {/* <textarea name="" cols="30" rows="2" class="form-control"></textarea> */}
-                    <input type="text" placeholder="User@mail.com" aria-describedby="button-addon3" class="form-control border-0" />
+                    <input type="text" name="email" value={formData.email} placeholder="User@mail.com" onChange={handleChange} aria-describedby="button-addon3" class="form-control border-0" />
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="bg-light rounded-pill px-4 py-3 text-uppercase fw-bold">E-mail Contact</div>
                     <div class="p-4">
                     <p class="mb-4"><em>Please enter your phone number in the box below.</em></p>
-                    <input type="text" placeholder="+34 467 857 372" aria-describedby="button-addon3" class="form-control border-0" />
+                    <input type="text" name="phone" value={formData.phone} placeholder="+34 467 857 372" onChange={handleChange} aria-describedby="button-addon3" class="form-control border-0" />
                     <ul class="list-unstyled mb-4">
                         <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Order Subtotal </strong><strong>${total()}</strong></li>
-                        <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Shipping and handling</strong><strong>$10.00</strong></li>
+                        <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Shipping and handling</strong><strong>Free</strong></li>
                         {/* <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Tax</strong><strong>$0.00</strong></li> */}
                         <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Total</strong>
-                        <h5 class="fw-bold">${total()+10}</h5>
+                        <h5 class="fw-bold">${total()}</h5>
                         </li>
-                    </ul><Link  to={'/'} class="btn btn-dark rounded-pill py-2 d-md-block">Procceed to checkout</Link>
+                    </ul><button onClick={handleSubmit} class="btn btn-dark rounded-pill py-2 d-md-block">Procceed to checkout</button>
                     </div>
                 </div>
                 </div>
