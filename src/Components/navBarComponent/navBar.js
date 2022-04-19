@@ -11,7 +11,7 @@ import "./navBar.css"
 import { Navbar,Container,Nav,NavDropdown } from 'react-bootstrap';
 
 export default function NavBar()  {
-    const {badge,cartArray}=useContext(CartContext)
+    const {badge,cartArray,delItem}=useContext(CartContext)
     const {name,thumbnail,price,id,cantidad}=cartArray
 
         return(
@@ -67,7 +67,7 @@ export default function NavBar()  {
                       <div className="row align-items-center">
                         <div className="col-lg-9">
                           <div className="media media-product">
-                            <a href="#!"><img className='media-product' src={items.thumbnail} alt="Image" /></a>
+                            <a href=''><img className='media-product' src={items.thumbnail} alt="Image" /></a>
                             <div className="media-body">
                               <h5 className="media-title">{items.name}</h5>
                               <span className="media-subtitle">{items.name}</span>
@@ -77,7 +77,7 @@ export default function NavBar()  {
                         <div className="col-lg-3 text-center text-lg-right">
                           <span className="cart-item-price">${items.price}</span>
                         </div>
-                        <a href="#!" className="cart-item-close"><i className="bi bi-x"></i></a>
+                        <button onClick={()=>{delItem(items.id)}} className="cart-item-close"><i className="bi bi-x" ></i></button>
                       </div>
                     </div>
                   </div>

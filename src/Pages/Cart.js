@@ -102,7 +102,7 @@ const Cart = ()=>{
                             </th>
                             <td class="border-0 align-middle"><strong>{items.price}</strong></td>
                             <td class="border-0 align-middle"><strong>{items.cantidad}</strong></td>
-                            <td class="border-0 align-middle"><a href="#" class="text-dark"><i class="bi bi-trash"></i></a></td>
+                            <td class="border-0 align-middle"><a href="#" class="text-dark"onClick={()=>{delItem(items.id)}}><i class="bi bi-trash"></i></a></td>
                         </tr>
                             )})
                         }
