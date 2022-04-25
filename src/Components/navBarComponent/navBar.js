@@ -12,7 +12,7 @@ import { Navbar,Container,Nav,NavDropdown } from 'react-bootstrap';
 
 export default function NavBar()  {
     const {badge,cartArray,delItem}=useContext(CartContext)
-    const {name,thumbnail,price,id,cantidad}=cartArray
+    // const {name,thumbnail,price,id,cantidad}=cartArray
 
         return(
         <>
@@ -51,12 +51,8 @@ export default function NavBar()  {
                       <h5 className="offcanvas-title" id="offcanvasNavbarLabel">Cart</h5>
                       <button type="button" className="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
-                    <div class="offcanvas-body">
-                    <div class="row gutter-3">
-
-
-
-
+                    <div className="offcanvas-body">
+                    <div className="row gutter-3">
 
 {                        
                               

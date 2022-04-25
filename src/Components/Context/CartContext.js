@@ -37,9 +37,7 @@ const CartProvider = ({children}) =>{
             }
            
               
-            
-            // console.log(`agregaste ${cantidad} ${name} ${price} ${id} ${thumbnail} `)
-            // console.log(cartArray)  
+           
         }
 
         const delItem=(id)=>{

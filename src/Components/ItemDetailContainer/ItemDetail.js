@@ -10,6 +10,7 @@ import { CartContext } from '../Context/CartContext';
 
 
 
+
 const ItemDetail = ({name,thumbnail,price,stock,description,id,category,region,})=>{ 
    
 const [inCart,setInCart]=useState(false)   
@@ -64,6 +65,7 @@ const [inCart,setInCart]=useState(false)
 				</div>
 			</div>
 		</div>
+		
 	</div>
 
 

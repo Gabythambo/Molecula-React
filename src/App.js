@@ -12,12 +12,16 @@ import ItemDetailPage from "./Pages/ItemDetailPage";
 import RegionsPage from "./Pages/RegionsPage";
 import NotFound from "./Pages/Error404";
 
+
+
 function App() {
   return (
     <>
       <CartContext>
+
        <BrowserRouter>
         <NavBar />
+      
         <Routes>
          <Route path="*" element={<NotFound/>} />
           <Route path="/" element={<Home/>}/>
@@ -25,8 +29,9 @@ function App() {
           <Route path="/contact" element={<ContactPage/>}/>
           <Route path="/producto/:id" element={<ItemDetailPage/>}/>
           <Route path="/cart" element={<Cart/>}/>
-          
+         
         </Routes>
+        
       </BrowserRouter> 
       </CartContext>
    
