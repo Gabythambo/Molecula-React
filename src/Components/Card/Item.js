@@ -1,6 +1,5 @@
 import "./card.css"
 import  Button from '@mui/material/Button';
-// import ItemCounter from "../ItemCounter/itemCounter"
 import {Link} from 'react-router-dom';
 
 
