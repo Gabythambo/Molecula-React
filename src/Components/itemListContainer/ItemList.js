@@ -45,7 +45,7 @@ const ItemList = ({childrem}) =>{
                   paragraph
                   
                 >
-                  {items.length} resultados
+                  {items.length} results
                 </Typography>
               </Grid>
                 <div className='wrapper'>

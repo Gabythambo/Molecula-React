@@ -20,7 +20,7 @@ const itemListContent = ({children}) =>{
             color="text.primary"
             paragraph
           >
-        Todos los Productos
+        All Products
           </Typography>
         </Box>
       </Container>
