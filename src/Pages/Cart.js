@@ -6,7 +6,6 @@ import db from "../fireBaseConfig"
 import { addDoc,collection} from "firebase/firestore"
 
 
-
 const Cart = ({children})=>{
     const {cartArray, delItem, total, clearCart}=useContext(CartContext)
     const {name,thumbnail,price,id,cantidad}=cartArray
@@ -44,15 +43,10 @@ const Cart = ({children})=>{
             ...formData,
             [e.target.name]:e.target.value
             })
-
-          
                 console.log(e.target.name)
-            
-    
-            
+       
         }
 
-        
         const handleSubmit = (e)=>{
           
             e.preventDefault() 
@@ -62,35 +56,30 @@ const Cart = ({children})=>{
                 buyer:formData
             })
             pushOrder()
-
-
                     }
-        
 
         const pushOrder= async()=>{
         const orderFireBase = collection(db,'order')
         const orderDoc = await addDoc(orderFireBase,order)
         setSuccesOrder(orderDoc.id)
         console.log(orderDoc.id)
-        clearCart()
-
-                    }
-     /* muestra orden procesada*/
-     
+        clearCart() 
+         }
+     /* muestra orden procesada*/   
     return(
          <div className="cart">
-             
-         
          <section class="py-0">
          {successOrder?(
-                    <>
-                    <h4>Su compra fue realizado con Exito</h4>
-                     <h4>codido: {successOrder}</h4>
-                     <Link to="/"> <Button>Volver al Home</Button></Link>
-                     </>
-
-):
-                   (<>
+                <>
+                   <div class="jumbotron text-center">
+            <h1 class="display-3">Thank You!</h1> 
+            <p>Your purchase was successful under code: {successOrder}</p>
+            <p class="lead"><strong>Please check your email</strong> for further instructions on how to complete your shopping</p>
+            <Link to="/"> <Button>Continue to homepage</Button></Link>
+        </div>
+                </>
+                ):(
+                <>
                 <div class="container px-4 px-lg-5 my-5">
                 <div class="row">
                 <div class="col-lg-12 p-1 bg-white rounded shadow-sm mb-5">
@@ -117,8 +106,8 @@ const Cart = ({children})=>{
                 {(cartArray.length === 0 )
                     &&
                     <>
-                    <h4>El carrito esta vacio</h4>
-                    <Link to="/"> <Button>Volver al Home</Button></Link>
+                    <h4>Empty cart</h4>
+                    <Link to="/"> <Button>Continue to homepage</Button></Link>
                     </>
                 }       
                         {                        
@@ -181,63 +170,12 @@ const Cart = ({children})=>{
                         </li>
                     </ul><button onClick={handleSubmit} class="btn btn-dark rounded-pill py-2 d-md-block">Procceed to checkout</button>
                     </div>
-                    
-                    
                 </div>
                 </div>
-
-
-
             </div>
             </>)}
-            </section>
-            
-            
+            </section>  
         </div>
     )
-
-
-    
-
-
 }
 export default Cart
-
-
-
-
-//       <div className="ContainerProducts">    
-//         <h1>CART</h1>
-
-// {
-//                 (cartArray.length === 0 )
-//                 &&
-//                 <>
-//                 <p>El carrito esta vacio</p>
-//                 <Link to="/"> <Button>sVolver al Home</Button></Link>
-//                 </>
-// }  
-// {      
-//                  cartArray.map((items) =>{
-//                     return (  
-//                             <did  key={items.id} >
-//                               <img src={items.thumbnail}/>
-//                               <p>nombre {items.name}</p>
-//                             <Button onClick={()=> delItem(items.id)} >eliminar</Button>
-//                             <p>precio unitario  {items.price}</p>
-//                             </did>
-//                     )
-//                 })
-//  }
-// {
-//        (cartArray.length >=1)
-//        &&
-//        <>
-//         <p>total  {total()}</p> 
-//         <Link to="/cart"> <Button onClick={()=>clearCart()}>Vaciar carrito</Button></Link>  
-//         <Link to="/*"> <Button onClick={()=>clearCart()}>finalizar Compra</Button></Link>  
-//         </>
-//         }
-   
-//     </div>
-

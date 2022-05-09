@@ -4,14 +4,10 @@ import {useParams, } from 'react-router-dom';
 import { collection,getDocs } from 'firebase/firestore';
 import db from '../fireBaseConfig';
 
-
-
-
 const RegionPageContainer = ({children})=>{
 
     const {region}=useParams()
     const [items,setItems]=useState([]);
-
 
     const getItems = async ()=>{
         const itemsCollection = collection(db,'Productos')
@@ -27,8 +23,7 @@ const RegionPageContainer = ({children})=>{
     
     useEffect(()=>{  
         getItems().then((productos)=>{
-                        //    setLoading(false)
-                           setItems(productos)
+        setItems(productos)
                            
           }) 
        },[])
@@ -39,19 +34,19 @@ const RegionPageContainer = ({children})=>{
             <div className='wrapper'>
             {
                 items.map((items) =>{
-                        if (items.region ===region)
+                    if (items.region ===region)
                     return (
-                    <Item key={items.id}
-                    name={items.name}
-                    thumbnail={items.thumbnail}
-                    price={items.price}
-                    stock={items.stock}
-                    id={items.id}
-                    description={items.description}
-                    category={items.category}
-                    region={items.region}
-                    />
-                    )
+                            <Item key={items.id}
+                            name={items.name}
+                            thumbnail={items.thumbnail}
+                            price={items.price}
+                            stock={items.stock}
+                            id={items.id}
+                            description={items.description}
+                            category={items.category}
+                            region={items.region}
+                            />
+                            )
                 })
             }
             </div>

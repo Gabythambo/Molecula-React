@@ -3,6 +3,7 @@ import ItemDetail from './ItemDetail';
 import { useNavigate, useParams } from 'react-router-dom';
 import db from '../../fireBaseConfig';
 import { doc,getDoc } from 'firebase/firestore';
+
 const ItemDetailContainer = ({})=>{
 
     const {id}=useParams()
@@ -34,10 +35,6 @@ const ItemDetailContainer = ({})=>{
     },[id])   
 return(
     <>    
-            
-                {/* //  items.map((items) =>{ */}
-                {/* //         if (items.id == id) */}
-                        
                     (
                             <ItemDetail key={items.id}
                             name={items.name}

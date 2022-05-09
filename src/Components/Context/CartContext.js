@@ -35,10 +35,7 @@ const CartProvider = ({children}) =>{
                 badge(newproduct.cantidad)
                
             }
-           
-              
-           
-        }
+            }
 
         const delItem=(id)=>{
             const newArray = cartArray.filter(element => element.id !== id)
@@ -61,9 +58,6 @@ const CartProvider = ({children}) =>{
         const total=()=>{
             return cartArray.reduce( (acum,prod)=>acum = acum + (prod.cantidad * prod.price),0 )
         }
-
-
-    // const badge=useContext(CartContext) hook al context
 
     const value = {
         cartArray,
