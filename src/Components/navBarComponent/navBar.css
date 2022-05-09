@@ -6,8 +6,7 @@
 } 
 .container .navbar-brand{
   font-size: 2rem;
-  margin-left: -100px;
-margin-right: 100px;
+  margin-right: 100px;
 }
 .App-header {
   display: flex;
@@ -140,7 +139,7 @@ object-fit: cover;
   border-radius: 0;
 }
 
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: 1200px) {
   .container .navbar-brand {
     font-size: 2rem;
     margin: 0;

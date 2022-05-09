@@ -13,7 +13,7 @@ export default function NavBar()  {
     const {badge,cartArray,delItem}=useContext(CartContext)
         return(
         <>
-        <Navbar expand="xxl" sticky="top" bg="dark" variant="dark">
+        <Navbar expand="sm" sticky="top" bg="dark" variant="dark">
           <Container> 
             <Navbar.Brand href="/">Molecula</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
