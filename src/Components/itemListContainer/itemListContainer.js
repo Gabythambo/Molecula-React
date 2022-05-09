@@ -1,17 +1,48 @@
 import ItemList from './ItemList'
+import Container from '@mui/material/Container'
+import Box from '@mui/material/Box'
+import Typography from '@mui/material/Typography'
+import { CardMedia } from '@mui/material'
 
 
 
 const itemListContent = ({children}) =>{
 
     return(
-        <div className="ContainerProducts">
+       
+       <Box className="ContainerProductsSIN">
+          
+        <Container maxWidth="lg">
         
-        <h2>Todos los Productos</h2>
-    
+        <Box sx={{ pt: 6 }}>
+          <Typography
+            variant="h2"
+            align="center"
+            color="text.primary"
+            paragraph
+          >
+        Todos los Productos
+          </Typography>
+          {/* <Typography
+            component="h2"
+            variant="h3"
+            align="center"
+            color="text.primary"
+            gutterBottom
+          >
+            Nuevos Origenes
+          </Typography> */}
+        </Box>
+      </Container>
+      
+      <Container maxWidth="lg">
+        <Box sx={{ pt: 2, pb: 6 }}>
         <ItemList /> 
-     
-        </div>
+        </Box>
+        
+      </Container>
+    
+        </Box>
         
 
     )

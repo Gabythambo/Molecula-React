@@ -56,11 +56,13 @@ const Cart = ({children})=>{
         const handleSubmit = (e)=>{
           
             e.preventDefault() 
+            
             setOrder({
                 ...order,
                 buyer:formData
             })
             pushOrder()
+
 
                     }
         
@@ -91,7 +93,7 @@ const Cart = ({children})=>{
                    (<>
                 <div class="container px-4 px-lg-5 my-5">
                 <div class="row">
-                <div class="col-lg-12 p-5 bg-white rounded shadow-sm mb-5">
+                <div class="col-lg-12 p-1 bg-white rounded shadow-sm mb-5">
                    
                     <div class="table-responsive">
                     <table class="table">
@@ -143,10 +145,12 @@ const Cart = ({children})=>{
                 </div>   
                 </div>
                 </div>
-                {/* aca el if  */}
+                
                 
             <div class="row py-5 p-4 bg-white rounded shadow-sm">
-                <div class="col-lg-6">
+             
+                    
+            <div class="col-lg-6">
                     <div class="bg-light rounded-pill px-4 py-3 text-uppercase fw-bold">Buyer</div>
                     <div class="p-4">
                     <p class="mb-4"><em>Please enter your name in the box below.</em></p>
@@ -168,10 +172,10 @@ const Cart = ({children})=>{
                     <div class="p-4">
                     <p class="mb-4"><em>Please enter your phone number in the box below.</em></p>
                     <input type="text" name="phone" value={formData.phone} placeholder="+34 467 857 372" onChange={handleChange} aria-describedby="button-addon3" class="form-control border-0" />
-                    <ul class="list-unstyled mb-4">
+                   
+                <ul class="list-unstyled mb-4">
                         <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Order Subtotal </strong><strong>${total()}</strong></li>
                         <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Shipping and handling</strong><strong>Free</strong></li>
-                        {/* <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Tax</strong><strong>$0.00</strong></li> */}
                         <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Total</strong>
                         <h5 class="fw-bold">${total()}</h5>
                         </li>
@@ -181,6 +185,7 @@ const Cart = ({children})=>{
                     
                 </div>
                 </div>
+
 
 
             </div>

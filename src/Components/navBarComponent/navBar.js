@@ -16,7 +16,7 @@ export default function NavBar()  {
 
         return(
         <>
-<Navbar expand="md lg" sticky="top" bg="dark" variant="dark">
+<Navbar expand="xxl" sticky="top" bg="dark" variant="dark">
   <Container> 
     <Navbar.Brand href="/">Molecula</Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -31,20 +31,14 @@ export default function NavBar()  {
           <NavDropdown.Divider />
           <NavDropdown.Item href="/region/China">China</NavDropdown.Item>
         </NavDropdown>
-        
-        <Link to="#link" className='nav-link'>Contact</Link>
-                
+        <Link to="#link" className='nav-link'>Contact</Link>         
       </Nav>  
       </Navbar.Collapse>
       <Badge badgeContent={badge()} color="success" className=''><Button className="button" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
             <span className="bi"></span>
-            <CartWidget/></Button></Badge>
-  
-      
-     
+            <CartWidget/></Button></Badge>   
   </Container>
-  
-</Navbar>
+  </Navbar>
 
 <div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
                     <div className="offcanvas-header">
@@ -87,7 +81,6 @@ export default function NavBar()  {
                           <div className="row gutter-0">
                             <div className="col">
                             <Link className='btn btn-md btn-block btn-secondary' to={'/cart'} >Checkout</Link>
-                              {/* <a href="http://localhost:3000/cart" className="">View Cart</a> */}
                             </div>
                           </div>
                         </div>

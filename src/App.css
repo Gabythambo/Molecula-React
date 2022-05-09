@@ -1,5 +1,6 @@
 
-
+/* .preview.preview-pic.col-md-6.tab-content {
+max-height: 400px;} */
 .App-header {
   display: flex;
   flex-direction: row;
@@ -8,7 +9,13 @@
   font-size: calc(10px + 2vmin);
  
 }
-
+.imagenfooter {
+  background-color: black;
+  background-image: url("../public/coffe.gif");
+  height: 100px;
+  background-repeat: no-repeat;
+  background-position: 50%;
+}
 
 ul li  {
   display: inline;

@@ -11,7 +11,7 @@ import Home from "./Pages/Home"
 import ItemDetailPage from "./Pages/ItemDetailPage";
 import RegionsPage from "./Pages/RegionsPage";
 import NotFound from "./Pages/Error404";
-
+import Footer from "./Components/footer/footter";
 
 
 function App() {
@@ -32,7 +32,8 @@ function App() {
          
         </Routes>
         
-      </BrowserRouter> 
+      </BrowserRouter>
+      <Footer></Footer> 
       </CartContext>
    
 

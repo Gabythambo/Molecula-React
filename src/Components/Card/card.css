@@ -2,6 +2,7 @@
 .card__img {
     width: 100%;
   }
+
 *::before,
 *::after {
   box-sizing: border-box;
@@ -10,13 +11,16 @@
   
 }
 
-/* .body {
-  font-family: "Noto Sans", sans-serif;
+body {
+  font-size: 1.5vw;
   
-} */
+}
+.MuiContainer-root.MuiContainer-maxWidthLg.css-1oqqzyl-MuiContainer-root {
+  max-width: 100%;
+}
 
 .wrapper {
-  margin: 2rem;
+  /* margin: 2rem; */
   display: grid;
   gap: 1rem;
   grid-template-columns: 1fr;

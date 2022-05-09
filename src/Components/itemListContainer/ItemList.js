@@ -6,6 +6,8 @@ import db from '../../fireBaseConfig'
     import { collection,getDocs} from 'firebase/firestore'
 // import { Category } from '@mui/icons-material'
 // import { useParams } from 'react-router-dom'
+import { Grid } from '@mui/material'
+import { Typography } from '@mui/material'
 
 const ItemList = ({childrem}) =>{
 
@@ -33,6 +35,19 @@ const ItemList = ({childrem}) =>{
     },[])
 
     return(
+                
+                <>
+                 <Grid item xs={12} mr={0}>
+                <Typography
+                  align="right"
+                  color="text.secondary"
+                  gutterBottom
+                  paragraph
+                  
+                >
+                  {items.length} resultados
+                </Typography>
+              </Grid>
                 <div className='wrapper'>
                 {
                 loading ? <CircularProgress /> :
@@ -50,6 +65,7 @@ const ItemList = ({childrem}) =>{
                         })
                 }
             </div>
+            </>
 )}
 export default ItemList
 
