@@ -1,3 +1,21 @@
+**Ecommerce final project of the CoderHouse React by CoderHouse
+
+Simulates being an online store selling coffee and accessories, where the items are hosted on FireBase.
+
+The user will be able to live the complete purchase experience, delete and add the product. See the order total and complete the purchase by filling out a form.
+A unique id is generated for the transaction and creates a new object in firebase with customer data and chosen products.
+
+I used:
+React JS
+Material UI
+FireBase
+SASS
+Swipper (Slider)
+React Router
+Boostrap
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
