@@ -6,12 +6,19 @@ import {getFirestore} from 'firebase/firestore'
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBC1enPZu2AJJ22xRUBUPyx_L1x23mAd2o",
-  authDomain: "moleculainfusiones.firebaseapp.com",
-  projectId: "moleculainfusiones",
-  storageBucket: "moleculainfusiones.appspot.com",
-  messagingSenderId: "197839876064",
-  appId: "1:197839876064:web:81b99a1da03463135bc585"
+
+  apiKey: "AIzaSyBoXIRSZXuvbS9To9iSMDs0R366z5gUM-Y",
+
+  authDomain: "moleculainfusiones-a7ae0.firebaseapp.com",
+
+  projectId: "moleculainfusiones-a7ae0",
+
+  storageBucket: "moleculainfusiones-a7ae0.appspot.com",
+
+  messagingSenderId: "917748187208",
+
+  appId: "1:917748187208:web:6271d3dd342f0f8f2c587d"
+
 };
 
 // Initialize Firebase
